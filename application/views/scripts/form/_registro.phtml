@@ -1,0 +1,35 @@
+<div class="one-field">
+    <input name="<?php echo $this->element->getElement('email')->getName(); ?>" value="<?php echo $this->element->getElement('email')->getValue(); ?>" placeholder="<?php echo $this->translate('usuario.login.form.registro.field.email')?>" class="<?php if ($this->element->getElement('email')->hasErrors()){ echo 'input-error'; } ?>" />
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('email')->getMessages(), $this->element->getElement('email')->getName());?>
+</div>
+<div class="one-field">
+    <input name="<?php echo $this->element->getElement('confirm_email')->getName(); ?>" value="<?php echo $this->element->getElement('confirm_email')->getValue(); ?>" placeholder="<?php echo $this->translate('usuario.login.form.registro.field.confirmaemail')?>" class="<?php if ($this->element->getElement('confirm_email')->hasErrors()){ echo 'input-error'; } ?>" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false" />
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('confirm_email')->getMessages(), $this->element->getElement('confirm_email')->getName());?>
+</div>
+<div class="one-field">
+    <input name="<?php echo $this->element->getElement('password')->getName(); ?>" placeholder="<?php echo $this->translate('usuario.login.form.registro.field.password')?>" class="<?php if ($this->element->getElement('password')->hasErrors()){ echo 'input-error'; } ?>" type="password" />
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('password')->getMessages(), $this->element->getElement('password')->getName());?>
+</div>
+<div class="one-field">
+    <input name="<?php echo $this->element->getElement('confirm_password')->getName(); ?>" placeholder="<?php echo $this->translate('usuario.login.form.registro.field.confirmapassword')?>" class="<?php if ($this->element->getElement('confirm_password')->hasErrors()){ echo 'input-error'; } ?>" type="password" />
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('confirm_password')->getMessages(), $this->element->getElement('confirm_password')->getName());?>
+</div>
+<div class="one-field-short" style="margin-right:5px;">
+    <input name="<?php echo $this->element->getElement('nombre')->getName(); ?>" value="<?php echo $this->element->getElement('nombre')->getValue(); ?>" placeholder="<?php echo $this->translate('usuario.login.form.registro.field.nombre')?>" class="<?php if ($this->element->getElement('nombre')->hasErrors()){ echo 'input-error'; } ?>" style="width:105px;"/>
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('nombre')->getMessages(), $this->element->getElement('nombre')->getName(), 'short');?>
+</div>
+<div class="one-field-short">
+    <input name="<?php echo $this->element->getElement('apellidos')->getName(); ?>" value="<?php echo $this->element->getElement('apellidos')->getValue(); ?>" placeholder="<?php echo $this->translate('usuario.login.form.registro.field.apellidos')?>" class="<?php if ($this->element->getElement('apellidos')->hasErrors()){ echo 'input-error'; } ?>" style="width:106px;"/>
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('apellidos')->getMessages(),$this->element->getElement('apellidos')->getName(), 'short');?>
+</div>
+<div class="one-field-short" style="margin-right:5px;">
+    <input name="<?php echo $this->element->getElement('codigo_postal')->getName(); ?>" value="<?php echo $this->element->getElement('codigo_postal')->getValue(); ?>" placeholder="<?php echo $this->translate('usuario.login.form.registro.field.codigopostal')?>" class="<?php if ($this->element->getElement('codigo_postal')->hasErrors()){ echo 'input-error'; } ?>" style="width:105px;"/>
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('codigo_postal')->getMessages(),$this->element->getElement('codigo_postal')->getName(),  'short');?>
+</div>
+<div class="one-field-short">
+    <input name="<?php echo $this->element->getElement('telefono_movil')->getName(); ?>" value="<?php echo $this->element->getElement('telefono_movil')->getValue(); ?>"" placeholder="<?php echo $this->translate('usuario.login.form.registro.field.telefonomovil')?>" class="<?php if ($this->element->getElement('telefono_movil')->hasErrors()){ echo 'input-error'; } ?>" style="width:106px;"/>
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('telefono_movil')->getMessages(), $this->element->getElement('telefono_movil')->getName(), 'short');?>
+</div>
+<div class="one-field">    
+    <input class="submitlogin" type="submit" value="<?php echo $this->translate('usuario.login.form.registro.submit')?>">
+</div>

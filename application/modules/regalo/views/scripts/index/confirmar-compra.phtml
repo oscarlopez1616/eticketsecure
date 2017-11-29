@@ -1,0 +1,46 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+    $ruta_regalo            = $ruta['dominio'].$ruta['base'].$ruta['imagenes']['galeria']['regalo'];
+?>
+
+<div id="content-paso-3">
+    <div id="container-paso-3">
+        <div id="paso-3-top">
+            <div id="paso-3-producto">
+                <img id="img-producto-p2" src="<?php echo $ruta_gui ?>/<?php echo $this->vista_arr['producto']['imagen']?>" />
+            </div>
+            <div id="paso-3-datos">
+                <div id="p3-datos-text">
+                    <h2><?php echo $this->translate('confirmarcompra.turegalo');?></h2>
+                    <span><?php echo $this->translate('confirmarcompra.nombre');?></span>
+                    <span class="extra-span"><?php echo $this->vista_arr['nombre_comprador']?></span>
+                    <span><?php echo $this->translate('confirmarcompra.receptor');?><?php if ($this->vista_arr['email_receptor']!='') { echo ' ('.$this->vista_arr['email_receptor'].')'; }?></span>
+                    <span class="extra-span"><?php echo $this->vista_arr['nombre_receptor']?></span>
+                    <span><?php echo $this->translate('confirmarcompra.entradas');?></span>
+                    <span class="extra-span"><?php echo $this->vista_arr['numero_entradas']?>x <?php echo $this->vista_arr['producto']['nombre']?></span>
+                </div>
+                <div id="efectuar-pago-button"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'tramitar-compra'), null, true)?>">
+                            <span id="confirmar-precio"><?php echo $this->vista_arr['producto']['pvp']*$this->vista_arr['numero_entradas']?> <font style="font-size:22px;">€</font></span></span>
+                            <img src="<?php echo $ruta_gui?>/efectuar-pago-<?php echo $this->idioma?>.png" /></a>
+                </div>
+            </div>
+        </div>
+        <div id="paso-3-bot">
+            <div id="paso-3-ticket-titulo"><?php echo $this->translate('confirmarcompra.tarjeta-t');?></div>
+            <div id="paso-3-content-wrap">
+                <div id="paso-3-content-foto">
+                    <div id="preview-sobre-foto">
+                        <?php if($this->vista_arr['ruta_imagen']!=''){ ?>
+                            <img src="<?php echo $this->vista_arr['url_imagen']?>" />
+                        <?php }?>
+                    </div>
+                </div>
+                <div id="paso-3-content-nombre">
+                    <?php echo $this->translate('confirmarcompra.tarjeta-i');?>:<br /><?php echo $this->vista_arr['nombre_receptor']?>
+                </div>
+            </div>
+            <div id="paso-3-ticket-ejemplo"><a target="_blank" href="<?php echo $ruta_gui?>/sample-tarjeta-imprimible.jpg"><?php echo $this->translate('confirmarcompra.tarjeta-v');?></a></div>
+        </div>
+    </div>
+</div>

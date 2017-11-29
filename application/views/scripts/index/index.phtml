@@ -1,0 +1,239 @@
+<!--<body onload="javascript:zoomHome()">
+<script src="http://localhost/ticketingrupneu/public/js/d3.v3.min.js"></script>
+
+<style>
+    .tipo-butaca_normal .active{
+        fill:#FFFFFF;
+        stroke:#000000;
+    }
+    .tipo-butaca_silla_ruedas .active{
+        fill:#FFFFFF;
+        stroke:#000000;
+    }
+    .tipo-butaca_normal .butaca_back{
+        fill:#38761a;
+        stroke:#18560a;
+    }
+    .tipo-butaca_normal .butaca_seat{
+        fill:#56a42c;
+        stroke:#18560a;
+    }
+    .tipo-butaca_normal .butaca_numero{
+        fill:rgba(255,255,255,0.8);
+    }
+    .tipo-butaca_normal:hover .butaca_numero{
+        fill:#FFFFFF;
+    }
+    .tipo-butaca_normal:hover .butaca_seat{
+        fill:#7bd14d;
+    }
+    .tipo-butaca_normal:hover .butaca_back{
+        fill:#56a42c;
+    }
+    
+    
+    
+    .tipo-butaca_silla_ruedas .butaca_back{
+        fill:#181a76;
+        stroke:#180a56;
+    }
+    .tipo-butaca_silla_ruedas .butaca_seat{
+        fill:#262ca4;
+        stroke:#180a56;
+    }
+    .tipo-butaca_silla_ruedas .butaca_numero{
+        fill:rgba(255,255,255,0.8);
+    }
+    .tipo-butaca_silla_ruedas:hover .butaca_numero{
+        fill:#FFFFFF;
+    }
+    .tipo-butaca_silla_ruedas:hover .butaca_seat{
+        fill:#2b4dd1;
+    }
+    .tipo-butaca_silla_ruedas:hover .butaca_back{
+        fill:#262ca4;
+    }
+    
+    
+    
+
+    a{
+        cursor:pointer;
+    }
+    .svg_container a:hover rect{
+        stroke:#fff;
+        stroke-width:1px; 
+    }
+    .navigator{
+        position:absolute;
+        z-index:50;
+        background: url("imagenes/navi.png");
+        width:80px;
+        height:95px;
+        float:left;
+        padding-top:5px;
+        
+    }
+    .navigator .zoom_in{
+        float:left;
+        display:block;
+        width:30px;
+        height:24px;
+    }
+
+    .navigator .zoom_out{
+        margin-left:8px;
+        float:left;
+        display:block;
+        width:30px;
+        height:24px;
+    }
+    .navigator .move_left{
+        display: block;
+        float: left;
+        height: 24px;
+        margin-left: 8px;
+        width: 20px;
+    }
+    .navigator .zoom_home{
+        float:left;
+        display:block;
+        width:22px;
+        height:24px;
+    }
+    .navigator .move_right{
+        float:left;
+        display:block;
+        width:22px;
+        height:24px;
+    }
+    .navigator .move_up{
+        margin-left:8px;
+        float:left;
+        display:block;
+        width:60px;
+        height:18px;
+    }
+    .navigator .move_down{
+        display: block;
+        float: left;
+        height: 18px;
+        margin-bottom: 5px;
+        margin-left: 8px;
+        width: 60px;
+    }
+    #svg_sala a.rotation{
+      transform:rotate(-30deg);  
+        
+    }
+    #svg_sala {
+        position:relative;        
+        width:600px;
+        height:550px;
+        left:0;
+        transition:width 0.2s, height 0.2s, left 0.2s, top 0.2s;
+        -webkit-transition:width 0.2s, height 0.2s, left 0.2s, top 0.2s; /* Safari */  
+    }
+    #svg_container{
+        /*border:1px solid #ddd;*/
+        width:950px; /*TOBACK*/
+        height:500px; /*TOBACK*/
+        overflow:hidden;
+    }
+
+</style>
+
+<script language="javascript">
+    var initial_zoom=600;
+    var zoom=initial_zoom;
+    var top_val=0;
+    var left_val=0;
+    var move_offset=80;
+    var zoom_offset=0.7;
+    var container_width=850; /*TODO*/
+    var container_height=400;
+    function applyZoom(){
+        document.getElementById("svg_sala").style.width=zoom;
+        document.getElementById("svg_sala").style.height=zoom; 
+        left_val= -(zoom-container_width)/2; //centrar "x" cuando se hace zoom
+        if (zoom<container_height){
+            top_val= -(zoom-container_height)/2;  //centrar "y" cuando se hace zoom mas pequeño que el contenedor
+        }else{
+           top_val=0;  //alinear arriba cuando se hace zoom mas grande que el contenedor
+        }
+        applyMove();
+    }
+    function applyMove(){
+        document.getElementById("svg_sala").style.left=left_val;
+        document.getElementById("svg_sala").style.top=top_val;    
+    }
+    function zoomIn(){    
+        zoom=zoom/zoom_offset;
+        applyZoom();
+    }
+    function zoomHome(){
+       zoom=initial_zoom;
+       top_val=0;
+       left_val=0;
+       applyZoom();
+       applyMove();
+    }
+    function zoomOut(){
+       zoom=zoom*zoom_offset;
+       applyZoom();    
+    }
+    function moveLeft(){
+        left_val=left_val+move_offset;
+        applyMove();   
+    }
+    function moveRight(){
+        left_val=left_val+-move_offset;
+        applyMove();   
+    }
+    function moveUp(){
+        top_val+=move_offset;
+        applyMove();   
+    }
+    function moveDown(){
+        top_val-=move_offset;
+        applyMove();   
+    }
+    function clickButaca(id_butaca){
+        alert("clickada la butaca"+id_butaca);
+    }
+</script>
+<div class="navigator">
+
+    <a href="javascript:moveUp()" class="move_up"></a>
+    <a href="javascript:moveLeft()" class="move_left"></a>
+    <a href="javascript:zoomHome()" class="zoom_home"></a>
+    <a href="javascript:moveRight()" class="move_right"></a>
+    <a href="javascript:moveDown()" class="move_down"></a>
+    <a href="javascript:zoomOut()" class="zoom_out"></a>
+    <a href="javascript:zoomIn()" class="zoom_in"></a>
+
+</div>
+<div id="svg_container">
+</div>
+<script>
+
+
+<?php 
+//echo $this->zona;
+?>
+            
+</script>
+
+</body>-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="icon" href="/ticketingrupneu/public/es/favicon.ico" type="image/x-icon" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Regala Teatro</title>
+    </head>
+    <body>
+        
+        <?php echo $this->test; ?>
+    </body>
+<html>

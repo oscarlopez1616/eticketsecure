@@ -1,0 +1,278 @@
+[04-Feb-2015 13:32:57] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'production')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('production', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:34:12] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'production')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('production', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:34:28] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'production')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('production', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:34:33] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'production')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('production', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:34:53] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'production')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('production', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:35:56] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'production')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('production', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:36:01] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'production')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('production', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:37:05] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'testing')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('testing', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:44:05] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'testing')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('testing', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:44:08] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'parse_ini_file(/configs/application.ini) [<a href='function.parse-ini-file'>function.parse-ini-file</a>]: failed to open stream: No such file or directory' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/configs/applic...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/configs/applic...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/configs/applic...', 'testing')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/configs/applic...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('testing', '/configs/applic...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 13:46:12] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Error parsing /home1/oscarlop/public_html/regalo/application/configs/application.ini on line 162
+' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:182
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(202): Zend_Config_Ini->_parseIniFile('/home1/oscarlop...')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php(126): Zend_Config_Ini->_loadIniFile('/home1/oscarlop...')
+#2 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/home1/oscarlop...', 'testing')
+#3 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home1/oscarlop...')
+#4 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('testing', '/home1/oscarlop...')
+#5 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 182
+[04-Feb-2015 20:47:02] PHP Fatal error:  Call to undefined function  date_diff() in /home1/oscarlop/public_html/regalo/application/models/SessionEticketSecure.php on line 54
+[04-Feb-2015 20:49:06] PHP Fatal error:  Call to undefined function  date_diff() in /home1/oscarlop/public_html/regalo/application/models/SessionEticketSecure.php on line 54
+[04-Feb-2015 20:52:44] PHP Fatal error:  Call to undefined function  date_diff() in /home1/oscarlop/public_html/regalo/application/models/SessionEticketSecure.php on line 54
+[04-Feb-2015 19:55:37 UTC] PHP Warning:  PHP Startup: magickwand: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:37 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:37 UTC] PHP Warning:  PHP Startup: PDO: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:37 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so' - /opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so: undefined symbol: third_arg_force_ref in Unknown on line 0
+[04-Feb-2015 19:55:37 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:37 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:37 UTC] PHP Fatal error:  Directive 'allow_call_time_pass_reference' is no longer available in PHP in Unknown on line 0
+[04-Feb-2015 19:55:51 UTC] PHP Warning:  PHP Startup: magickwand: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:51 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:51 UTC] PHP Warning:  PHP Startup: PDO: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:51 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:51 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so' - /opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so: undefined symbol: third_arg_force_ref in Unknown on line 0
+[04-Feb-2015 19:55:51 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:51 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:55:51 UTC] PHP Fatal error:  Directive 'allow_call_time_pass_reference' is no longer available in PHP in Unknown on line 0
+[04-Feb-2015 19:57:09 UTC] PHP Warning:  PHP Startup: magickwand: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:57:09 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:57:09 UTC] PHP Warning:  PHP Startup: PDO: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:57:09 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:57:09 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so' - /opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so: undefined symbol: third_arg_force_ref in Unknown on line 0
+[04-Feb-2015 19:57:09 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:57:09 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:57:09 UTC] PHP Fatal error:  Directive 'allow_call_time_pass_reference' is no longer available in PHP in Unknown on line 0
+[04-Feb-2015 19:58:07 UTC] PHP Warning:  PHP Startup: magickwand: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:07 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:07 UTC] PHP Warning:  PHP Startup: PDO: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:07 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so' - /opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so: undefined symbol: third_arg_force_ref in Unknown on line 0
+[04-Feb-2015 19:58:07 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:07 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:07 UTC] PHP Fatal error:  Directive 'allow_call_time_pass_reference' is no longer available in PHP in Unknown on line 0
+[04-Feb-2015 19:58:44 UTC] PHP Warning:  PHP Startup: magickwand: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:44 UTC] PHP Warning:  PHP Startup: imagick: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:44 UTC] PHP Warning:  PHP Startup: PDO: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:44 UTC] PHP Warning:  PHP Startup: pdo_sqlite: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so' - /opt/php52/lib/php/extensions/no-debug-non-zts-20060613/sqlite.so: undefined symbol: third_arg_force_ref in Unknown on line 0
+[04-Feb-2015 19:58:44 UTC] PHP Warning:  PHP Startup: pdo_mysql: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:44 UTC] PHP Warning:  PHP Startup: SourceGuardian: Unable to initialize module
+Module compiled with module API=20060613
+PHP    compiled with module API=20100525
+These options need to match
+ in Unknown on line 0
+[04-Feb-2015 19:58:44 UTC] PHP Fatal error:  Directive 'allow_call_time_pass_reference' is no longer available in PHP in Unknown on line 0
+[04-Feb-2015 21:02:04 Europe/Madrid] PHP Warning:  include_once(/home1/oscarlop/www/regalo_teatreneu/includes/analyticstracking.php): failed to open stream: No such file or directory in /home1/oscarlop/public_html/regalo/application/layouts/scripts/regalo-layout.phtml on line 17
+[04-Feb-2015 21:02:04 Europe/Madrid] PHP Warning:  include_once(): Failed opening '/home1/oscarlop/www/regalo_teatreneu/includes/analyticstracking.php' for inclusion (include_path='/home1/oscarlop/public_html/regalo/application/../library:/home1/oscarlop/recursos_zend/library:.:/opt/php54/lib/php') in /home1/oscarlop/public_html/regalo/application/layouts/scripts/regalo-layout.phtml on line 17
+[04-Feb-2015 21:02:04 Europe/Madrid] PHP Warning:  include_once(/home1/oscarlop/www/regalo_teatreneu/includes/retargeting.php): failed to open stream: No such file or directory in /home1/oscarlop/public_html/regalo/application/layouts/scripts/regalo-layout.phtml on line 81
+[04-Feb-2015 21:02:04 Europe/Madrid] PHP Warning:  include_once(): Failed opening '/home1/oscarlop/www/regalo_teatreneu/includes/retargeting.php' for inclusion (include_path='/home1/oscarlop/public_html/regalo/application/../library:/home1/oscarlop/recursos_zend/library:.:/opt/php54/lib/php') in /home1/oscarlop/public_html/regalo/application/layouts/scripts/regalo-layout.phtml on line 81
+[04-Feb-2015 21:02:49 Europe/Madrid] PHP Warning:  include_once(/home1/oscarlop/www/regalo_teatreneu/includes/analyticstracking.php): failed to open stream: No such file or directory in /home1/oscarlop/public_html/regalo/application/layouts/scripts/regalo-layout.phtml on line 17
+[04-Feb-2015 21:02:49 Europe/Madrid] PHP Warning:  include_once(): Failed opening '/home1/oscarlop/www/regalo_teatreneu/includes/analyticstracking.php' for inclusion (include_path='/home1/oscarlop/public_html/regalo/application/../library:/home1/oscarlop/recursos_zend/library:.:/opt/php54/lib/php') in /home1/oscarlop/public_html/regalo/application/layouts/scripts/regalo-layout.phtml on line 17
+[04-Feb-2015 21:02:49 Europe/Madrid] PHP Warning:  include_once(/home1/oscarlop/www/regalo_teatreneu/includes/retargeting.php): failed to open stream: No such file or directory in /home1/oscarlop/public_html/regalo/application/layouts/scripts/regalo-layout.phtml on line 81
+[04-Feb-2015 21:02:49 Europe/Madrid] PHP Warning:  include_once(): Failed opening '/home1/oscarlop/www/regalo_teatreneu/includes/retargeting.php' for inclusion (include_path='/home1/oscarlop/public_html/regalo/application/../library:/home1/oscarlop/recursos_zend/library:.:/opt/php54/lib/php') in /home1/oscarlop/public_html/regalo/application/layouts/scripts/regalo-layout.phtml on line 81
+[04-Feb-2015 14:04:14 America/Chicago] PHP Fatal error:  Uncaught exception 'Zend_Config_Exception' with message 'Section 'testing' cannot be found in /home1/oscarlop/public_html/regalo/application/configs/application.ini' in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php:151
+Stack trace:
+#0 /home1/oscarlop/recursos_zend/library/Zend/Application.php(402): Zend_Config_Ini->__construct('/home1/oscarlop...', 'testing')
+#1 /home1/oscarlop/recursos_zend/library/Zend/Application.php(85): Zend_Application->_loadConfig('/home1/oscarlop...')
+#2 /home1/oscarlop/public_html/regalo/index.php(24): Zend_Application->__construct('testing', '/home1/oscarlop...')
+#3 {main}
+  thrown in /home1/oscarlop/recursos_zend/library/Zend/Config/Ini.php on line 151

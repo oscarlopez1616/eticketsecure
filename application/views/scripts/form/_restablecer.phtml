@@ -1,0 +1,9 @@
+<div class="one-field">
+    <input name="<?php echo $this->element->getElement('password')->getName(); ?>" value="" placeholder="Contraseña" class="<?php if ($this->element->getElement('password')->hasErrors()){ echo 'input-error'; } ?>" type="password" />
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('password')->getMessages(), $this->element->getElement('password')->getName());?>
+</div>
+<div class="one-field">
+    <input name="<?php echo $this->element->getElement('confirm_password')->getName(); ?>" value="" placeholder="Confirma tu contraseña" class="<?php if ($this->element->getElement('confirm_password')->hasErrors()){ echo 'input-error'; } ?>" type="password" />
+    <?php echo $this->element->getView()->muestraErrores($this->element->getElement('confirm_password')->getMessages(), $this->element->getElement('confirm_password')->getName());?>
+</div>
+<input class="submitlogin" type="submit" value="Restablecer contraseña">

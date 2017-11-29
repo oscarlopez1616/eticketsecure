@@ -1,0 +1,31 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+?>
+    <div style="float:left;">
+        <span style="margin-top:20px;"class="label-form-1"><?php echo $this->translate('datoscompra.form.nombre');?></span>
+        <input name="<?php echo $this->element->getElement('nombre_comprador')->getName(); ?>" value="<?php echo $this->element->getElement('nombre_comprador')->getValue(); ?>" class="input-clean<?php if ($this->element->getElement('nombre_comprador')->hasErrors()){ echo ' input-error'; } ?>"/>
+        <?php echo $this->element->getView()->muestraErrores($this->element->getElement('nombre_comprador')->getMessages(), $this->element->getElement('nombre_comprador')->getName(), 'regalo');?>
+    </div>
+    <div style="float:left;">
+        <span style="margin-top:44px;" class="label-form-1"><?php echo $this->translate('datoscompra.form.nombrepersona');?></span>
+        <input name="<?php echo $this->element->getElement('nombre_receptor')->getName(); ?>" value="<?php echo $this->element->getElement('nombre_receptor')->getValue(); ?>" class="input-clean<?php if ($this->element->getElement('nombre_receptor')->hasErrors()){ echo ' input-error'; } ?>"/>
+        <?php echo $this->element->getView()->muestraErrores($this->element->getElement('nombre_receptor')->getMessages(), $this->element->getElement('nombre_receptor')->getName(), 'regalo');?>
+    </div>
+        <span style="margin-top:44px;" class="label-form-1"><?php echo $this->translate('datoscompra.form.numeroentradas');?></span>
+    <div style="width:100%; float:left;">
+        <img onclick="menosEntradas();" class="paso2-num-entradas-options" src="<?php echo $ruta_gui?>/entradas-menos.png" />
+        <input name="<?php echo $this->element->getElement('numero_entradas')->getName(); ?>" id="paso2-num-entradas" value="<?php echo $this->element->getElement('numero_entradas')->getValue(); ?>" readonly />
+        <img onclick="masEntradas();" class="paso2-num-entradas-options" src="<?php echo $ruta_gui?>/entradas-mas.png" />
+        <span class="label-form-2"><?php echo $this->translate('datoscompra.form.numeroentradasentradas');?></span>
+         <?php echo $this->element->getView()->muestraErrores($this->element->getElement('numero_entradas')->getMessages(), $this->element->getElement('numero_entradas')->getName(), 'regalo');?>
+    </div>
+    
+    <!-- HIDDEN -->
+    <div style="display: none;">
+        <input name="<?php echo $this->element->getElement('imagen')->getName(); ?>" value="<?php echo $this->element->getElement('imagen')->getValue(); ?>" type="text" />
+        <input name="<?php echo $this->element->getElement('flag_email_receptor')->getName(); ?>" value="<?php echo $this->element->getElement('flag_email_receptor')->getValue(); ?>" />
+        <input name="<?php echo $this->element->getElement('email_receptor')->getName(); ?>" value="<?php echo $this->element->getElement('email_receptor')->getValue(); ?>" />
+        <div id="hidden-error-email-receptor"><?php echo $this->element->getView()->muestraErrores($this->element->getElement('email_receptor')->getMessages(), $this->element->getElement('email_receptor')->getName(), 'regalo-2');?></div>
+    </div>
+    

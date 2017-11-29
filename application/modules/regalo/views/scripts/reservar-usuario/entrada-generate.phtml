@@ -1,0 +1,207 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+    $ruta_regalo = $ruta['dominio'].$ruta['base'].$ruta['imagenes']['galeria']['regalo'].'/uploads';
+?>
+<head>
+    <link rel="icon" href="/ticketingrupneu/public/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Regala Teatro</title>
+    <body>
+        <style>
+            body{
+                font-family: Arial;
+                margin:0;
+            }
+            #tarjeta-regalo-back{
+                width:871px;
+                height:345px;
+            }
+            
+            #background-tarjeta-regalo{
+                width:871px;
+                height:345px;
+                position:absolute;
+            }
+            #tarjeta-regalo-content{
+                position:absolute;
+                width:871px;
+                height:345px;
+            }
+            
+            #trc-ticket{
+                width:640px;
+                height:235px;
+                margin-left:56px;
+                margin-top:47px;
+                padding-left:50px;
+                float:left;
+            }
+            #trc-ticket-producto{
+                float:left;
+                height: 235px;
+                margin-left:20px;
+            }
+            
+            #trc-ticket-producto img{
+                height: 235px;
+            }
+            
+            #trc-ticket-center{
+                float:left;
+                width:260px;
+                margin-left:23px;
+                margin-top:12px;
+            }
+            
+            #trc-ticket-qr{
+                float:left;
+                margin-left:40px;
+                margin-top:80px;
+            }   
+            
+            #trc-ticket-qr img{
+                width:95px;
+                height:95px;
+            }
+            
+            #localizador{
+                width:260px;
+                font-size: 12px;
+                float:left;
+                font-weight: bold;
+            }
+            
+            #over-localizador{
+            float:left;
+            height:102px;
+            }
+            
+            #num_entradas{
+                width:260px;
+                font-size: 28px;
+                float:left;
+                font-weight: bold;
+            }
+            
+            #nombre_producto{
+                width:260px;
+                font-size: 14px;
+                float:left;
+                font-weight: bold;
+            }
+            
+            #nombre_receptor_box{
+                width:238px;
+                height:32px;
+                margin-top:5px;
+                padding-left:10px;
+                padding-right:10px;
+                padding-top:10px;
+                padding-bottom:10px;
+                font-size: 18px;
+                font-weight: bold;                
+                float:left;
+            }
+            
+            #nombre_receptor_holder{
+                display: table-cell;
+                vertical-align: middle;  
+                height:32px;
+            }
+            
+            #nombre_receptor_box_text{ 
+                margin:0;
+            }
+            
+            #url_explicacion {
+                float:left;
+                font-size: 12px;
+                margin-top:10px;
+            }
+            #url_link {
+                float:left;
+                font-size: 12px;
+                font-weight: bold;
+                width:410px;
+                margin-top:10px;
+            }
+            #trc-front{
+                float:left;
+                width: 515px;
+                margin-top:490px;
+                margin-left:128px;
+                height:168px;
+                padding-left:24px;
+                padding-right:60px;
+                padding-top:20px;
+            }
+            
+            #trc-front-image-box{
+                float:left;
+                width:168px;
+                height:167px;
+            }
+            
+            #trc-front-image-box img{
+                width:168px;
+                height:167px;
+            }
+            
+            #trc-front-text-area{
+                float:left;
+                margin-left:20px;
+                width:295px;
+                margin-top:50px;
+                margin-left:50px;
+            }
+            #trc-front-text-area span{
+                float:left;
+                width:285px;
+                font-family:Brush Script Std;
+                color:#626153;
+                font-size:20px;
+                
+            }
+            #pegatina{
+                width:85px;
+                height:71px;
+                position:absolute;
+                float:left;
+                margin-top:-40px;
+                margin-left:-72px;
+            }
+        </style>
+        <div id="tarjeta-regalo-back">
+            <img id="background-tarjeta-regalo" src="<?php echo $ruta_gui?>/back-entrada-imprimible.jpg">
+            <div id="tarjeta-regalo-content">
+                <div id="trc-ticket">
+                    <div id="trc-ticket-producto">
+                        <img src="<?php echo $ruta_gui?>/<?php echo $this->vista_arr['imagen_producto']?>" />
+                    </div>
+                    <div id="pegatina">
+                        <img src="<?php echo $ruta_gui?>/mini-pegatina.png">
+                    </div>
+                    <div id="trc-ticket-center">
+                        <div id="over-localizador">
+                            <span id="num_entradas"><?php echo $this->vista_arr['numero_entradas']?> <?php echo $this->translate('entrada.imprimible.entradas');?></span>
+                            <span id="nombre_producto"><?php echo $this->vista_arr['nombre_producto']?></span>
+                            <span id="localizador"><?php echo $this->vista_arr['sesion']?></span>
+                            <span id="localizador"><?php echo $this->vista_arr['lugar']?></span>
+                        </div>
+                        <div id="nombre_receptor_box">
+                            <div id="nombre_receptor_holder">
+                                <p id="nombre_receptor_box_text"><?php echo $this->vista_arr['localizador']?></p>
+                            </div>
+                        </div>
+                        <span id="url_explicacion"><?php echo $this->translate('entrada.imprimible.text')?></span>
+                        <span id="url_link"></span>
+                    </div>
+                    <div id="trc-ticket-qr">
+                        <img src="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'default', 'controller' => 'ticketing-utils', 'action' =>'qr', 'ct' => urlencode($this->vista_arr['localizador'])), null, true)?>">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>

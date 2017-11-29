@@ -1,0 +1,52 @@
+
+        <div id="logo_neu"><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'index'), null, true)?>"></a></div>
+        <!-- INNER -->
+        <div id="pop-login">
+            <div id="head-pop-login">
+                    <div id="head-pop-login-inner">
+                        <div id="head-pop-login-inner-left">Club TeatreNeu</div>
+                    </div>
+            </div>
+
+            <div id="body-pop-login">
+                <?php if (isset ($this->message) && $this->message=='bypass') { ?>
+                    <?php echo $this->translate('usuario.login.silogeado');?>
+                <?php }else{  ?>
+                <div id="pop-login-window-login">
+                    <div class="encabezado-caja-login">
+                        <span><?php echo $this->translate('usuario.login.login.title');?></span>
+                        <p><?php echo $this->translate('usuario.login.login.text');?></p>    
+                    </div>
+                    <div class="form-caja-login">
+                        <?php echo $this->form_login ?>
+                        <p class="minor-recuperar"><?php echo $this->translate('usuario.login.recuperar.title');?></p>
+                        <div id="recuperar-container" <?php if ($this->error_recuperar != 1) { ?>style="display:none;"<?php } ?>>
+                            <?php echo $this->form_recuperar ?>
+                        </div>
+                    </div>  
+                    <?php if(isset($this->success_message)){ ?>
+                        <div class="succes_container"><span><?php echo $this->success_message; ?></span></div>
+                    <?php } ?>
+                    <?php if(isset($this->error_message)){ ?>
+                        <div class="error_container"><span><?php echo $this->error_message; ?></span></div>
+                    <?php } ?>
+                </div>
+                <div id="pop-login-window-registro">
+                    <div class="encabezado-caja-login">
+                        <span><?php echo $this->translate('usuario.login.registro.title');?></span>
+                        <p><?php echo $this->translate('usuario.login.registro.text');?></p>                 
+                    </div>
+                    <div class="form-caja-login">
+                        <?php echo $this->form_registro; ?>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            
+        </div>        
+        
+        <script>
+          $(function() {
+            $('input, textarea').placeholder();
+        });
+        </script>

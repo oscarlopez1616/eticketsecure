@@ -1,0 +1,108 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui       = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+    $ruta_regalo    = $ruta['dominio'].$ruta['base'].$ruta['imagenes']['galeria']['regalo'];
+?>
+<div id="content-paso-reserva">
+    <div id="container-paso-reserva" style="background: url(<?php echo $ruta_gui?>/back-reserva-usuario-<?php echo $this->idioma?>.png) no-repeat;">
+        <div id="container-reserva-top">
+            <div id="container-reserva-top-title">
+            <h2><?php echo $this->translate('reserva.1.enorabuena') ?></h2>
+            <span><?php echo $this->translate('reserva.1.text1') ?></span>
+            </div>
+            <div id="frame-entrada">
+                <div id="frame-entrada-imagen">
+                    <img src="<?php echo $ruta_gui?>/<?php echo $this->vista_arr['producto']['imagen']?>" />
+                </div>
+                <div id="frame-entrada-content">
+                    
+                    <span id="frame-entrada-numentradas"><?php echo $this->vista_arr['numero_entradas']?> <?php echo $this->translate('reserva.1.entradas') ?></span>
+                    <span id="frame-entrada-titleentradas"><?php echo $this->translate('reserva.1.validas') ?> <?php echo $this->vista_arr['producto']['nombre']?></span>
+                    <span id="frame-entrada-titularentradas"><?php echo $this->vista_arr['nombre_receptor']?></span>
+                </div>
+            </div>
+        </div>
+        <div id="container-reserva-bot">
+            <div id="reserva-elige-obra">
+                <div id="reserva-elige-obra-select">
+                    <div id="reserva-elige-obra-select-obra">
+                        <span class="reserva-bot-label-1" style="width:260px;margin-left:2px;"><?php echo $this->translate('reserva.1.select1') ?></span>
+                        <select id="element-select-obra" class="reserva-select-side" onchange="showNewObraReservar();">
+                            <?php foreach ($this->vista_arr['espectales'] as $key=>$espectacle){ ?>
+                                <option<?php  if ($key==0) echo ' selected '; ?> value="<?php echo $espectacle['id_espectacle']?>"><?php echo $espectacle['titol']?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div id="reserva-elige-obra-select-sesion">
+                        <span class="reserva-bot-label-1" style="width:260px;margin-left:2px;"><?php echo $this->translate('reserva.1.select2') ?></span>
+                        <?php foreach ($this->vista_arr['sessions'] as $key=>$sesions){ ?>
+                            <select class="reserva-select-side reserva-select-side-sessions" id="element-sesion-select-obra-<?php echo $key;?>" style="display:none;" onchange="showNewObraReservar();">
+                                <?php foreach ($sesions as $key2=>$item_sesio){ ?>
+                                    <option value="<?php echo $item_sesio['id_session'] ?>"><?php echo $item_sesio['fecha_sesion']; ?></option>
+                                <?php } ?>
+                            </select> 
+                            <?php foreach ($sesions as $item_sesio){ ?>
+                                <span id="sala-sesion-<?php echo $item_sesio['id_session']?>-espectacle-<?php echo $key; ?>" style="display:none;"><?php echo $item_sesio['sala']; ?></span>                        
+                            <?php } ?>
+                        <?php } ?>
+                    </div>
+                </div>
+                <?php foreach ($this->vista_arr['espectales'] as $key=>$espectacle){ ?>
+                    <div class="reserva-obra-seleccionada" id="obra-ofertada-<?php echo $espectacle['id_espectacle'] ?>" style="display:none;">
+                        <div class="reserva-obra-seleccionada-foto">
+                            <img src="<?php echo $espectacle['foto_gran']?>">
+                        </div>
+                        <div class="reserva-obra-seleccionada-content">
+                            <span style="margin-bottom:7px;"><?php echo $espectacle['titol'] ?></span>
+                            <span>Teatro: <?php echo $espectacle['espai']; ?></span>
+                            <span>Sala: <font id="sala-set-espectacle-<?php echo $espectacle['id_espectacle'] ?>"></font></span>
+                            <a target="_blank" class="resreva-mas-info-obra" href="<?php echo $espectacle['link']?>"></a>
+                        </div>
+                    </div>
+                <?php } ?>
+                <!-- SI EXISTE COMPLEMENTO -->
+                <?php if(isset($this->vista_arr["complemento"])){ ?>
+                    <div id="plus-reserva-regalo"></div>
+                    <div class="reserva-complemento">
+                        <div class="reserva-obra-seleccionada-foto">
+                            <img src="<?php echo $ruta_gui?>/<?php echo $this->vista_arr['complemento']['imagen']?>">
+                        </div>
+
+                        <div class="reserva-obra-seleccionada-content reserva-obra-seleccionada-content-complmento">
+                            <span style="margin-bottom:7px;"><?php echo $this->vista_arr['complemento']['nombre_complemento']?></span>
+                            <span>Tipo: <?php echo $this->vista_arr['complemento']['tipo_complemento']?></span>
+                            <span>Tel: <?php echo $this->vista_arr['complemento']['telf']?></span>
+                            <a target="_blank" class="resreva-mas-info-obra" href="<?php echo $this->vista_arr['complemento']['link']?>"></a>
+                        </div>
+                    </div>
+                <?php } ?>
+                <!-- END COMPLEMENTO-->
+            </div>
+        </div>
+        <a id="reserva-confirma-button" href="#"></a>
+    </div>
+</div>
+
+<script>
+    var url_base = '<?php echo $this->url(array('module' => 'regalo','controller' => 'reservar-usuario','action' => 'tramitar-reserva'), null, true);?>';
+    var url_params = '/p1/<?php echo $this->vista_arr['id_compra_base_64']?>/p2/<?php echo $this->vista_arr['email_md5']?>/p3/';
+    var id_obra = $('#element-select-obra').val();
+    var id_sesion = $('#element-sesion-select-obra-'+id_obra).val();
+    var nombre_sala = $('#sala-sesion-'+id_sesion+'-espectacle-'+id_obra).html();
+    $('#obra-ofertada-'+$('#element-select-obra').val()).show();  
+    $('#element-sesion-select-obra-'+id_obra).show();
+    $('#sala-set-espectacle-'+id_obra).html(nombre_sala);
+    $('#reserva-confirma-button').attr('href', url_base + url_params +id_sesion);
+    
+    function showNewObraReservar(){
+        id_obra = $('#element-select-obra').val();
+        id_sesion = $('#element-sesion-select-obra-'+id_obra).val();
+        nombre_sala = $('#sala-sesion-'+id_sesion+'-espectacle-'+id_obra).html();
+        $('.reserva-obra-seleccionada').hide();
+        $('#obra-ofertada-'+id_obra).fadeIn(500);      
+        $('.reserva-select-side-sessions').hide();
+        $('#element-sesion-select-obra-'+id_obra).fadeIn(500);
+        $('#sala-set-espectacle-'+id_obra).html(nombre_sala);
+        $('#reserva-confirma-button').attr('href', url_base + url_params +id_sesion);
+    }
+</script>

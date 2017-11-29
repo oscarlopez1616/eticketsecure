@@ -1,0 +1,1639 @@
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Anton'), url(tilmJBBU81h1G7ZsdY3Hmw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Voltaire';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Voltaire'), url(ag0Q3_6hjQFerbCN2Eewq_esZW2xOQ-xsNqO47m55DA.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Alex Brush';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alex Brush'), local('AlexBrush-Regular'), url(IdwaSrUcr-IskDo5YUNTVRsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+
+html{
+    height: 100%;
+    border:0;
+    padding:0;
+    margin:0;
+}
+
+body{
+    border:0;
+    padding:0;
+    margin:0;
+    font-family:Arial, Helvetica, sans serif;
+    font-size:14px;
+}
+
+#main{
+    float:left;
+    width:100%;
+    background-image: url(../gui/filet-back.jpg);
+    background-repeat:repeat-x;
+    background-color:#9E9E9E;
+}
+
+#wrapper{
+    height: 1650px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    font-family:Arial, Helvetica, sans serif;
+    font-size:14px;
+    
+    
+}
+
+#main-content{
+    float:left;
+    width:100%;
+}
+
+#footer{
+    width:100%;
+    height:305px;
+    background: url(../gui/footer-trees.png) repeat-x;
+    margin-top:-100px;
+    float:left;
+}
+
+#center-footer{
+    width:830px;
+    left: 50%;
+    margin-left: -345px;
+    color:#000;
+    position: relative;
+    margin-top:130px;
+    height:170px;
+}
+
+#center-footer ul{
+    float:left;
+    width:240px;
+    margin-right:50px;
+    
+}
+
+#center-footer li{
+    float:left;
+    width:175px;
+    margin-bottom:7px;
+    background-image: url(../gui/bullet-footer.jpg);
+    background-repeat: no-repeat;
+    background-position: 13px 6px;
+    padding-left:25px;
+    height:20px;
+    padding-top:2px;
+    color:#9E9E9E;    
+    cursor:pointer;
+}
+
+#center-footer li:hover{
+    background-image: url(../gui/bullet-footer-black.jpg);
+    color:#000;
+}
+
+#center-footer a{
+    color:#9E9E9E;
+}
+
+#center-footer a:hover{
+    color:#000;
+}
+#black-layer{
+    width:100%;
+    height:1594px;
+    background-color:#000;
+    opacity:0.82;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    position: absolute;
+}
+
+#inner-head{
+    height:211px;
+}
+
+#inner-head img{
+    margin-top:35px;
+}
+
+#opener-layer{
+    position:absolute;
+    width:215px;
+    height:50px;
+    cursor: pointer;
+    left:50%;
+    margin-left:-163px;
+    margin-top:43px;
+}
+
+
+#switcher-tikets{
+    position:relative;
+    width:364px;
+    height:50px;
+    left:50%;
+    margin-left:-120px;
+    margin-top:-15px;
+    
+}
+
+#menu-es{
+    background: url(../gui/idioma-es.png) no-repeat;
+    width:125px;
+    height:35px;
+    cursor: pointer;
+    float:left;
+}
+#menu-es:hover{
+    background: url(../gui/idioma-es-hover.png) no-repeat;
+}
+.menu-es-active{
+    background: url(../gui/idioma-es-active.png) no-repeat!important;
+    cursor: default!important;
+}
+
+#menu-ca{
+    background: url(../gui/idioma-ca.png) no-repeat;
+    width:95px;
+    height:35px;
+    cursor: pointer;
+    float:left;
+    margin-left:15px;
+}
+#menu-ca:hover{
+    background: url(../gui/idioma-ca-hover.png) no-repeat;
+}
+.menu-ca-active{
+    background: url(../gui/idioma-ca-active.png) no-repeat!important;
+    cursor: default!important;
+}
+
+.ticket{
+    position:relative;
+    width:762px;
+    height:340px;
+    left:50%;
+    margin-left:-381px;
+    
+}
+
+.ticket-cotent-1{
+    background: url(../gui/back-ticket-1-es.png) no-repeat;
+}
+
+.ticket-cotent-2{
+    background: url(../gui/back-ticket-2-es.png) no-repeat;
+}
+
+.ticket-cotent-3{
+    background: url(../gui/back-ticket-3-es.png) no-repeat;
+}
+
+.ticket-first{
+    margin-top:-10px;
+}
+.ticket-no-first{
+    margin-top:-55px;
+}
+
+.ticket-content{
+    float:left;
+    margin-left:290px;
+    margin-top:50px;   
+}
+
+.ticket-content-left{
+    float:left;
+    width:250px;
+
+}
+
+.ticket-content-right{
+    float:left;
+    width:140px;
+    margin-top:84px;
+    margin-left:10px;
+}
+
+.ticket-content-right span{
+    font-size: 46px;
+    margin-left:20px;
+    line-height: 43px;
+    margin-top:14px;
+    float:left;
+    text-align: center;
+    width:78px;
+}
+
+.ver-obras-button{
+    width:69px;
+    height:42px;
+    float:left;
+    background: url(../gui/ver-obras-ticket-button.png) no-repeat;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 16px;
+    padding-left: 7px;
+    padding-right: 17px;
+    padding-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ticket-content h2{
+    margin:0px;
+}
+
+.ticket-content h1{
+    margin:0px;
+    font-size: 27px;
+}
+
+.ticket-content p{
+    width:250px;
+    font-size: 12px;
+}
+
+#como-funciona-layer{
+    position:absolute;
+    width:980px;
+    height:1126px;
+    left:50%;
+    margin-left:-500px;
+    margin-top:20px;
+    float:left;
+    z-index: 10;
+}
+
+#video-layer{
+    position:absolute;
+    width:775px;
+    height:585px;
+    left:50%;
+    margin-left:-384px;
+    margin-top:-80px;
+    float:left;
+    z-index: 10;
+}
+
+#video-layer span{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left:170px;
+    float:left;
+    
+}
+
+.video-span-subtitle{
+    font-size: 16px!important;
+    font-weight: normal!important;
+}
+
+.video-span-closetitle{
+    font-size: 12px!important;
+    font-weight: normal!important;
+    color:#D84C49!important;
+    cursor: pointer;
+    font-weight: bold!important;
+    margin-top:4px;
+    background-image: url(../gui/strelica.png);
+    background-repeat: no-repeat;
+    background-position: 3px 5px ;
+    padding-left:10px;
+}
+.video-span-closetitle:hover{
+    background-image: url(../gui/strelica_hover.gif);
+}
+
+
+
+#top-layer{
+    width:100%;
+    height:48px;
+    margin-top:45px;
+}
+
+#top-video-layer{
+    width:100%;
+    height:48px;
+    margin-top:25px;
+}
+
+#close-layer{
+    float:right;
+    margin-right:98px;
+    cursor: pointer;
+}
+
+#close-video-layer{
+    float:right;
+    margin-right:30px;
+    cursor: pointer;
+}
+
+#content-layer{
+    width:420px;
+    margin-left: 390px;
+    margin-top:20px;
+}
+
+#content-layer a {
+    color:#DB3630;
+    font-weight: bold;
+}
+
+#content-layer a:hover {
+    color:#DB3630;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#content-layer h1{
+    font-size: 26px;
+}
+
+#content-layer p{
+    width:340px;
+    font-size: 13px;   
+}
+
+.content-layer-item{
+    height:250px;
+}
+
+.content-layer-item-1{
+    height:390px;
+}
+
+.content-layer-item-1 p{
+    width:400px!important;
+}
+
+.content-layer-item-2{
+    height:190px;
+}
+
+.content-layer-item-2 p{
+    width:400px!important;
+}
+
+.content-layer-item-3{
+    width:290px;
+}
+
+.content-layer-item-3 h1, .content-layer-item-3 p{
+    width:290px!important;
+}
+
+
+.option-ticket {
+    width:210px;
+    height:23px;
+    float:left;
+    padding-left:40px;
+    padding-top:3px;
+
+}
+
+.option-ticket-open {
+    cursor:pointer;
+
+}
+
+.selected-option-ticket{
+    background: url(../gui/fondo-selected-option.jpg) no-repeat;
+    cursor:default!important;
+    
+}
+
+.comprar-button-1{
+    cursor: pointer;
+}
+
+
+#container-paso-2{
+    position:relative;
+    width:773px;
+    height:837px;
+    left:50%;
+    margin-left:-386px;
+    background: url(../gui/back-paso2.png) no-repeat;
+    
+}
+
+#container-2-top{
+    float:left;
+    padding-left:90px;
+    width:683px;
+    height:500px;
+    margin-top:16px;
+}
+
+#container-2-top-left{
+    width:346px;
+    float:left;
+}
+
+
+#container-2-top-right{
+    width:330px;
+    float:left;
+}
+
+#container-2-bot{
+    float:left;
+    padding-left:90px;
+    width:683px;
+}
+
+#container-2-bot-left{
+    float:left;
+    width: 380px;
+}
+
+#container-2-bot-right{
+    float:left;
+    width: 255px;
+    
+}
+
+
+#container-2-top-left h3{
+    width:346px;
+    margin-top:50px;
+    margin-bottom:25px;
+    float:left;
+}
+
+#paso2-form{
+    float:left;
+    margin-top:20px;
+    width:315px;
+    margin-left:30px;
+    
+}
+
+.label-form-1{
+    width:270px;
+    float:left;
+    margin-top:4px;
+    margin-left:5px;
+    color:#454545;
+    font-size: 12px;
+    height:15px;
+}
+
+.label-form-2{
+    float:left;
+    margin-top:17px;
+    margin-left:5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-clean{
+    color:#454545;
+    width:235px;
+    margin-top:6px;
+    margin-left:5px;
+    padding-top:2px;
+    padding-left:10px;
+    padding-right:0px;
+    float:left;
+    background: 0;
+    border:0;
+    height:16px;
+}
+
+.input-clean-2{
+    color:#454545;
+    width:150px;
+    margin-top:12px;
+    padding-top:2px;
+    padding-left:10px;
+    padding-right:10px;
+    float:left;
+    background: 0;
+    border:0;
+}
+
+#paso2-num-entradas{
+    border: 0;
+    background: 0;
+    font-size:42px;
+    float:left;
+    width:50px;
+    text-align: center;
+    font-weight: bold;
+    color:#000;
+}
+
+.paso2-num-entradas-options{
+    float:left;
+    margin-top: 10px;
+    cursor:pointer;
+}
+
+#img-producto-p2{
+    margin-left: 40px;
+    margin-top: 15px;
+    float:left;
+}
+
+#zona-foto{
+    width:140px;
+    height: 140px;
+    float:left;
+        margin-top:2px;
+}
+
+#zona-foto-text{
+    width:135px;
+    text-align: center;
+    margin-top:50px;
+    color:#fff;
+    font-size: 12px;
+    font-weight: bold;
+    cursor:pointer;
+    position: absolute;
+}
+
+#preview-foto{
+    width:140px;
+    height: 140px;
+    float:left;
+    position:absolute;
+}
+
+#eliminar-foto{
+    width:130px;
+    float:left;
+    position:absolute;
+    margin-top:144px;
+    color:#454545;
+    font-size: 11px;
+    font-style: italic;
+    margin-left:5px;
+    cursor:pointer;
+}
+
+#eliminar-foto img{
+    float:left;
+}
+
+#eliminar-foto span{
+    margin-left:5px;;
+}
+
+#preview-foto img{
+    width:140px;
+    height: 140px;
+}
+
+#filtro-foto{
+    width:140px;
+    height: 140px;
+    float:left;
+    position:absolute;
+    background: url(../gui/filtro-foto.png) no-repeat;
+}
+
+.check-step{
+    width:400px;
+    height:105px;
+    float:left;
+    margin-top:6px;
+}
+
+.check-imagen{
+    width:90px;
+    height:90px;
+    margin-top:22px;
+    float:left;
+}
+
+.check-imagen-active{
+    background: url(../gui/check-img.png) no-repeat;
+    background-position: 25px 3px; 
+}
+
+.check-step-in{
+    width:220px;
+    float:left;
+
+}
+
+.check-step-span{
+    float:left;
+    color:#454545;
+    margin-top:14px;
+    width:220px;
+    font-size: 12px;
+    
+}
+
+.check-step-question{
+    float:left;
+    width:35px;
+    height:35px;
+    cursor:help;
+    margin-left:44px;
+}
+
+#paso2-precio-total{
+    font-size: 46px;
+    font-weight: bold;
+    width:150px;
+    text-align: center;
+    margin-top:54px;
+    margin-left:70px;
+}
+
+#paso-2-confirmar{
+    width:185px;
+    height:62px;
+    margin-left:60px;
+    float:left;
+    cursor: pointer;
+}
+
+#paso-2-despeses{
+    width:175px;
+    height:62px;
+    margin-left:60px;
+    margin-top:10px;
+    float:left;
+    cursor: pointer;
+    font-size: 11px;
+    text-align: center;
+    
+}
+
+#container-2-obras{
+    float:left;
+    margin-top:43px;
+    margin-left:66px;
+}
+
+#paso-2-titulo-obras{
+    float:left;
+    margin-left:60px;
+    margin-top:15px;
+    font-weight: bold;
+    width:580px;
+}
+
+.paso2-cartelobra{
+    float:left;
+    margin-right:7px;
+}
+
+#p2-carteles-obras{
+    float:left;
+    margin-left:20px;
+    margin-top:15px;
+}
+
+
+.lista-obras-common{
+    position:absolute;
+    width:745px;
+    height:1073px;
+    left:50%;
+    margin-left:-372px;
+    float:left;
+    z-index:10;
+    margin-top:-200px;
+}
+
+#content-paso-1{
+    position: absolute;
+    float:left;
+    width:100%;
+    margin-top:-10px;
+}
+
+#content-paso-2{
+    position: absolute;
+    float:left;
+    width:100%;
+    margin-top: -20px;
+}
+
+.top-lista-obras{
+    width:100%;
+    height:48px;
+    margin-top:3px;
+}
+
+.close-lista-obras{
+    float:right;
+    margin-right:5px;
+    cursor: pointer;
+    width:48px;
+    height:48px;
+    
+}
+
+#content-lista-obras-t1{
+    width:740px;
+    float:left;
+}
+
+.lista-ticket-content{
+    float:left;
+    margin-left:290px;
+    margin-top:-10px;
+    
+}
+
+.lista-ticket-content h2{
+    margin:0px;
+}
+
+.lista-ticket-content h1{
+    margin:0px;
+}
+
+.lista-ticket-content p{
+    width:250px;
+    font-size: 12px;
+}
+
+.obras-en-pop{
+    float:left;
+    width:603px;
+    margin-left:47px;
+    background-color:#f7f6f2;
+    box-shadow: 2px 2px 50px 0 #CCCCCC;
+    border-radius:20px;
+    border:solid 1px #dadada;
+    margin-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+}
+
+.obras-pop-title {
+    background: url(../gui/bullet-present.jpg) no-repeat;
+    background-position: 10px 0px;
+    padding-left:45px;
+    font-weight: bold;
+    width:558px;
+    padding-top:3px;
+    margin-top:10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.obras-move-top{
+    float:left;
+    margin-left:-3px;
+    width:607px;
+    height:43px;
+    background: url(../gui/list-obras-pop-control-up-disable.png) no-repeat;
+}
+
+.obras-move-bot{
+    float:left;
+    margin-left:-3px;
+    width:607px;
+    height:43px;
+    background: url(../gui/list-obras-pop-control-down-disable.png) no-repeat;
+}
+
+.obras-move-top-enable{
+     background: url(../gui/list-obras-pop-control-up-enable.png) no-repeat!important;
+     cursor:pointer;
+}   
+
+.obras-move-bot-enable{
+     background: url(../gui/list-obras-pop-control-down-enable.png) no-repeat!important;
+     cursor:pointer;
+}   
+
+
+.las-obras-en-pop{
+    float:left;
+    margin-top:15px;
+    margin-bottom:15px;
+    width:603px;
+    height:621px;
+    overflow: hidden;
+}
+
+.las-obras-inner{
+    float:left;
+}
+
+.obra-item-pop{
+    float:left;
+    width: 145px;
+    height:202px;
+    margin-left:5px;
+    margin-bottom:5px;
+}
+
+.obra-item-pop-img{
+    width: 145px;
+    height:189px;
+    position:relative;
+    float:left;
+    
+}
+
+.plus-info-obra{
+    background-image:  url(../gui/plus-info.png);
+    background-repeat: no-repeat;
+    background-position: 10px 170px;
+    width:145px;
+    height:204px;
+    position:relative;
+}
+
+.plus-info-obra:hover{
+    background-image: url(../gui/plus-info-hover.png);
+
+}
+
+#upload-image-pop{
+    position:absolute;
+    width:750px;
+    height:667px;
+    left:50%;
+    margin-left:-375px;
+    margin-top:100px;
+    float:left;
+    background: url(../gui/back-upload-foto.png) no-repeat;
+    z-index:10;
+}
+
+#upload-image-pop-inner{
+    width:635px;
+    height:552px;
+    margin-left: 60px;
+    margin-top:10px;
+    background: url(../gui/back-upload-foto-inner.png) no-repeat;
+}
+
+.top-upload-pop{
+    width:100%;
+    height:48px;
+    margin-top:15px;
+}
+
+.upload-image-pop-inner{
+    float:right;
+    margin-right:5px;
+    cursor: pointer;
+    width:48px;
+    height:48px;
+    
+}
+
+.close-upload-pop{
+    float:right;
+    margin-right:5px;
+    cursor: pointer;
+    width:48px;
+    height:48px;
+    
+}
+
+#upload-inner-top{
+    width:500px;
+    margin-left:20px;
+    margin-right:130px;
+    float:left;
+    height:160px;
+}
+
+#upload-inner-bot{
+    width:650px;
+    float:left;
+    height:160px;
+}
+
+#upload-inner-zona-foto{
+    float:left;
+    width:330px;
+    height:370px;
+
+}
+
+#upload-controls{
+    float:left;
+    margin-left: 10px;
+    width:270px;
+    height:370px;
+}
+
+#upload-requirements{
+  float:left;  
+  margin-top:20px;
+  height:105px;
+}
+
+#upload-requirements p {
+    margin-bottom:5px;
+    margin-top:5px;
+    font-size: 12px;
+}
+
+#button-subir-foto{
+    cursor: pointer;
+    float:left;
+    width:230px;
+    height:50px;
+    margin-top:15px;
+    padding-top:10px;
+    padding-left:20px;
+    color:#fff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#button-confirmar-upload{
+    cursor: pointer;
+    float:left;
+    width:182px;
+    height:61px;
+    margin-top:20px;
+    margin-left:85px;
+}
+#foto-exist{
+    float:left;
+    margin-left:25px;
+    margin-top:35px;
+}
+
+#preview-big-foto{
+    width:267px;
+    height: 267px;
+    float:left;
+    position:absolute;
+}
+#preview-big-foto img{
+    width:267px;
+    height: 267px;
+}
+
+#filtro-big-foto{
+    width:267px;
+    height: 267px;
+    float:left;
+    position:absolute;
+    background: url(../gui/filtro-big-foto.png) no-repeat;
+}
+
+#container-paso-3{
+    position:relative;
+    width:751px;
+    height:862px;
+    left:50%;
+    margin-left:-375px;
+    margin-top:-20px;
+    background: url(../gui/back-paso-3.png) no-repeat;
+}
+
+#paso-3-top{
+    width: 750px;
+    float:left;
+    margin-top:35px;
+}
+
+#paso-3-producto{
+    float:left;
+    width:330px;
+    
+}
+
+#paso-3-datos{
+    float:left;
+    width:330px;
+    padding-left:30px;
+    margin-top:40px;
+}
+
+#p3-datos-text{
+    float:left;
+    height:235px;
+}
+
+#p3-datos-text h2{
+    margin-top:0;
+}
+
+#p3-datos-text span{
+    float:left;
+    width:280px;
+    font-size: 12px;
+}
+
+.extra-span{
+    font-size: 14px!important;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+#efectuar-pago-button{
+    float:left;
+    width:290px;
+    height:41px;
+    margin-left:12px;
+    margin-top:8px;
+    padding-left:5px;
+}
+
+#efectuar-pago-button img{ 
+    width:200px;
+    margin-top:4px
+}
+
+#paso-3-bot{
+    float:left;
+    margin-top:60px;
+    
+}
+
+#paso-3-ticket-titulo{
+    margin-left:125px;
+    font-size: 15px;
+    font-weight: bold;
+    width:535px;
+}
+
+#paso-3-ticket-ejemplo{
+    margin-left:85px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    width:535px;
+}
+
+#paso-3-ticket-ejemplo a{
+    color:#000;
+}
+#paso-3-ticket-ejemplo span{
+    color:#DB3630;
+}
+
+#paso-3-content-wrap{
+    margin-left:85px;
+    margin-top:20px;
+    font-size: 15px;
+    font-weight: bold;
+    width:576px;
+    height:270px;
+   
+}
+
+#paso-3-content-foto{
+    float:left;
+    width:130px;
+    height:130px;
+    margin-left:76px;
+    margin-top:73px;
+    
+}
+#paso-3-content-foto img{
+    float:left;
+    width:130px;
+    height:130px;
+}
+
+#paso-3-content-nombre{
+    float:left;
+    margin-left:35px;
+    margin-top:130px;
+    color:#5f5e50;
+    font-size: 18px;
+    font-family: Brush Script Std woff;
+    font-weight: normal;
+}
+
+#upload-file-container {
+   background: url(../gui/examinar-button.png) no-repeat;
+   background: 0\9;
+   *background: 0\9;
+   width:254px;
+   height:66px;
+   float:left;
+   margin-left:-2px;
+   cursor: pointer;
+}
+
+#upload-file-container input {
+   filter: alpha(opacity=0);
+   opacity: 0;
+   filter: alpha(opacity=100)\9;
+   opacity: 100\9;
+   *filter: alpha(opacity=100)\9;
+   *opacity: 100\9;
+   cursor:pointer;
+}
+
+#image_input_1{
+    width:252px;
+    height:63px;
+    height:23px\9;
+    margin-top:40px\9;
+    *height:23px\9;
+    *margin-top:40px\9;
+    
+}
+
+.regalo-one-field{
+    width:285px;
+    float:left;
+}
+
+.icon-pop-form-error-regalo{
+    float:left;
+    margin-left:10px;
+    margin-top:7px;
+    
+}
+
+.icon-pop-form-error-regalo-2{
+    float:left;
+    margin-left:8px;
+    margin-top:14px;
+    
+}
+
+#content-paso-reserva{
+    position: absolute;
+    float:left;
+    width:100%;
+    margin-top:60px;
+}
+
+#container-paso-reserva{
+    position:relative;
+    width:773px;
+    height:920px;
+    left:50%;
+    margin-left:-386px;
+}
+
+#container-reserva-top{
+    float:left;
+    padding-left:83px;
+    width:683px;
+    height:300px;
+    margin-top:140px;
+}
+
+
+
+#container-reserva-top-title{
+    float:left;
+    width:590px;
+    height:56px;
+}
+
+#container-reserva-top-title h2{
+    margin-top:5px;
+    margin-bottom:0px;
+    font-size: 24px;
+}
+
+#container-reserva-top-title span{
+    float:left;
+    margin-bottom:5px;
+    font-size: 13px;
+}
+
+#frame-entrada{
+    float:left;
+    margin-top:20px;
+    width:593px;
+}
+
+#frame-entrada-imagen{
+    width:155px;
+    height:215px;
+    float:left;
+    margin-left: 10px;
+    
+}
+
+#frame-entrada-imagen img{
+    width:155px;
+    height:215px;
+}
+
+#frame-entrada-content{
+    float:left;
+    margin-left:32px;
+    width:291px;
+    margin-top:20px;
+}
+
+#frame-entrada-localizador{
+    float:left;
+    width:290px;
+    font-size: 11px;
+}
+
+#frame-entrada-numentradas{
+    float:left;
+    width:290px;
+    font-size:24px;
+    margin-top:32px;
+    font-weight: bold;
+}
+
+#frame-entrada-titleentradas{
+    float:left;
+    width:290px;
+    font-size:12px;
+    margin-top:2px;
+    height:30px;
+    font-weight: bold;   
+}
+
+#frame-entrada-titularentradas{
+    float:left;
+    width:260px;
+    font-size:14px;
+    margin-top:30px;
+    font-weight: bold;   
+    margin-left:15px;
+}
+
+#container-reserva-bot {
+    float:left;
+    margin-left:70px;
+    margin-top:30px;
+    width:620px;      
+    height:228px;      
+}
+
+#reserva-bot-title{
+    float:left;
+    width:600px;
+    font-size:14px;
+    margin-top:2px;
+    height:25px;
+    font-weight: bold;  
+    margin-left: 20px;
+}
+
+.reserva-bot-label-1{
+    float:left;
+    width:600px;
+    font-size: 13px;
+}
+
+.input-text-reserva{
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+#reserva-elige-obra{
+    float:left;
+    margin-top:20px;
+    margin-top:50px;
+    margin-left: 17px;
+    width:580px;
+}
+
+#reserva-elige-obra-select{
+    width:580px;
+    float:left;
+}
+
+#reserva-elige-obra-select-obra{
+    float:left;
+    width:278px;
+    margin-right:24px;
+    overflow: hidden;
+}
+
+#reserva-elige-obra-select-sesion{
+    float:left;
+    width:278px;
+    overflow: hidden;
+    
+}
+
+.reserva-select-side{
+    float:left;
+    margin-top:5px;
+    width:300px;
+    height:31px;
+    background:0; 
+    border:0; 
+    background: url(../gui/back-select-reserva.jpg) no-repeat;
+    padding-top:7px;
+    padding-left:5px;
+}
+
+.reserva-obra-seleccionada{
+    float:left;
+    margin-top:17px;
+    width:280px;
+}
+
+
+.reserva-obra-seleccionada-foto{
+    float:left;
+    width:70px;
+    height:91px;
+}
+
+.reserva-obra-seleccionada img{
+    width:70px;
+    height:91px;
+}
+
+.reserva-obra-seleccionada-content{
+    margin-top:3px;
+    height:88px;
+    float:left;
+    margin-left:10px;
+    width:200px;
+}
+
+.reserva-obra-seleccionada-content span{
+    width:100%;
+    float:left;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom:3px;
+}
+
+.resreva-mas-info-obra{
+    background: url(../gui/mini-q-p-info.png) no-repeat;   
+    width:69px;
+    height:31px;
+    float:left;
+    margin-left:-1px;
+    margin-top:3px;
+}
+
+.resreva-player-info-obra{
+    background: url(../gui/mini-play.png) no-repeat;   
+    width:38px;
+    height:31px;
+    float:left;
+    margin-left:2px;
+    margin-top:3px;
+}
+
+#reserva-confirma-button{
+    float:left;
+    width:165px;
+    height:45px;
+    margin-left:527px;
+    margin-top:32px;
+    cursor: pointer;
+}
+
+#plus-reserva-regalo{
+    width:45px;
+    height:45px;
+    background: url(../gui/plus-reserva-regalo.png) no-repeat;   
+    float:left;
+    margin-right:20px;
+    margin-top:40px;
+        
+}
+
+.reserva-complemento{
+    float:left;
+    margin-top:17px;
+    width:230px;
+}
+
+.reserva-obra-seleccionada-content-complmento{
+    width:150px;
+}
+
+#confirmar-precio{
+    float:left;
+    text-align: center;
+    width:85px!important;
+    font-weight: bold;
+    font-size: 28px!important;
+    color:#fff;
+    margin-top:2px;
+        
+    
+}
+#sello{
+    width:125px;
+    height:116px;
+    position:absolute;
+    margin-left: 655px;
+    margin-top:-50px;
+}
+
+#content-retorno{
+    position: absolute;
+    float:left;
+    width:100%;
+}
+
+#container-retorno{
+    position:relative;
+    width:605px;
+    height:720px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 70px;
+    left:50%;
+    margin-left:-382px;
+    margin-top:80px;
+    
+}
+
+.container-retorno-ok{
+    background: url(../gui/back-retorno-ok.png) no-repeat;
+    height:770px!important;
+}
+
+.container-reserva-ok{
+    background: url(../gui/back-reserva-ok.png) no-repeat;
+    height:780px!important;
+}
+
+.container-retorno-ko{
+    background: url(../gui/back-retorno-ko.png) no-repeat;
+}
+
+#content-reservaend{
+    position: absolute;
+    float:left;
+    width:100%;
+}
+
+#container-reservaend{
+    position:relative;
+    width:705px;
+    height:745px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 100px;
+    left:50%;
+    margin-left:-382px;
+    margin-top:60px;
+    background: url(../gui/back-reserva-ok.png) no-repeat;
+    
+}
+
+#head-retorno-ok{
+    float:left;
+    width:600px;
+}
+#head-retorno-ko{
+    float:left;
+    width:600px;
+}
+#head-retorno-ko span{
+    float:left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:38px;
+}
+
+#head-retorno-ok span{
+    float:left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:25px;
+    margin-left:150px;
+    width:365px;
+    height:55px;
+    
+}
+
+#body-retorno-ok{
+    float:left;
+    margin-top: 30px;
+}
+
+#body-retorno-ok-left{
+    float:left;
+    margin-top: 100px;
+    margin-left: 27px;
+    width:260px;
+    height:355px;
+}
+
+#body-retorno-ok-right{
+    float:left;
+    margin-top: 10px;
+    margin-left: 17px;
+    width:290px;
+    height:290px;
+}
+
+#body-retorno-ok-links{
+    float:left;
+    width:285px;
+    margin-top:10px;   
+    margin-left:25px;
+}
+
+#body-retorno-ok-links a {
+    float:left;
+    height:63px;
+    width:272px;
+    margin-top:10px;   
+}
+
+#body-retorno-ok-mail_receptor{
+    width:600px;
+    float:left;
+    margin-top:20px;
+    margin-left:20px;    
+}
+
+#body-retorno-ok-mail_receptor span{
+    margin-bottom:10px;
+    float:left;
+    font-size:12px;
+}
+
+#body-retorno-ko{
+    float:left;
+    margin-top: 115px;
+    margin-left: 115px;
+    width:460px;
+}
+
+#buton-retorno-ko{
+    width:266px;
+    height:58px;
+    float:left;
+    margin-left:190px;
+    margin-top:20px;
+    background-repeat: no-repeat;   
+}
+
+#body-retorno span{
+    float:left;
+    font-size: 14px;
+    width:600px;
+    margin-top:20px;
+}
+
+#body-retorno-ok p{
+    float:left;
+    font-size: 13px;
+    width:320px;
+    margin:0px;
+}
+
+#body-retorno a{
+    float:left;
+    font-size: 14px;
+    width:600px;
+    margin-top:5px;
+    color:#599F25;
+}
+
+#body-retorno p a{
+    font-size: 14px;
+    margin-top:20px;
+    width:auto;
+    margin-top: 0;
+    float:none;
+}
+
+#body-retorno a:hover{
+    text-decoration: underline;
+}
+
+#pop-window-error-id-email_receptor{
+    margin-top:-40px;
+}
+
+#video-content-layer{
+    margin-left:62px;
+    margin-top:85px;
+}
+
+#loading-upload{
+    position:relative;
+    color:#fff;
+    margin-top:150px;
+    margin-left:100px;
+    font-weight: bold;
+}
+#loading-upload span{
+    
+    margin-right: 5px;
+}

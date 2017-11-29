@@ -1,0 +1,41 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+?>
+<div id="container-retorno" class="container-reserva-ok">
+            <div id="head-retorno-ok">    
+                <span><?php echo $this->translate('reserva.ok.title')?></span>
+            </div>
+            <div id="body-retorno-ok">
+                <div id="body-retorno-ok-left" style="margin-top:55px;">
+                    <span style="float:left;font-size: 16px;margin-top:0"><b><?php echo $this->translate('reserva.ok.datos')?></b><br /></span>
+
+                    <div style="float:left; margin-top:30px;width:250px; ">
+                        <p><b><?php echo $this->translate('reserva.ok.obra')?></b>: <?php echo $this->vista_arr['datos_obra']['titulo_espectaculo']?></p>
+                        <p><b><?php echo $this->translate('reserva.ok.sesion')?></b>: <?php echo $this->vista_arr['datos_obra']['fecha_reserva']?></p>
+                        <p><b><?php echo $this->translate('reserva.ok.teatro')?></b>: <?php echo $this->vista_arr['datos_obra']['nombre_teatro']?> <a style="color:#599F25" target="_blank" href="https://mapsengine.google.com/map/embed?mid=zB1UEO09MJ8E.kbyjsRk25txI">(ver mapa)</a></p>
+                        <p><b><?php echo $this->translate('reserva.ok.sala')?></b>: <?php echo $this->vista_arr['datos_obra']['nombre_sala']?></p>
+                        <p><b><?php echo $this->translate('reserva.ok.localizador')?></b>: <b style="color:#DB3630;"><?php echo $this->vista_arr['datos_obra']['localizador']?></b></p>
+                        <p>&nbsp;</p>
+                        <?php if(isset($this->vista_arr["complemento"])){ ?>
+                            <p><b><?php echo $this->translate('reserva.ok.complemento')?>:</b>: <?php echo $this->vista_arr['complemento']['nombre_complemento']?></p>
+                            <p><b><?php echo $this->translate('reserva.ok.tipo')?></b>: <?php echo $this->vista_arr['complemento']['tipo_complemento']?></p>
+                            <p><b><?php echo $this->translate('reserva.ok.telefono')?></b>: <?php echo $this->vista_arr['complemento']['telf']?></p>
+                            <p><a target="_blank" style="color:#599F25" href="<?php echo $this->vista_arr['complemento']['link']?>"><?php echo $this->translate('reserva.ok.masinfo')?></a></p>    
+                        <?php } ?>
+                    </div>
+                </div>
+                <div id="body-retorno-ok-right">
+                    <img src="<?php echo $ruta_gui?>/<?php echo $this->vista_arr['producto']['imagen'][$this->idioma]?>">
+                </div>
+                
+                <div id="body-retorno-ok-links">
+                    <a href="<?php echo $this->vista_arr['link_entrada'] ?>" style="background-image: url(<?php echo $ruta_gui?>/retorno-buton-link-entrada-<?php echo $this->idioma?>.png);"></a>
+                </div>
+                
+                <div id="body-retorno-ok-mail_receptor" style="margin-top:60px; width:560px;">
+                    <span><?php echo $this->translate('reserva.ok.remember')?></span>
+
+                </div>             
+            </div>
+        </div>

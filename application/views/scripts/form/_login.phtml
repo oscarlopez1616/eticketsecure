@@ -1,0 +1,16 @@
+<input name="<?php echo $this->element->getElement('email')->getName(); ?>" value="<?php echo $this->element->getElement('email')->getValue(); ?>" placeholder="Email" class="<?php if ($this->element->getElement('email')->hasErrors()){ echo 'input-error'; } ?>" />
+<input name="<?php echo $this->element->getElement('password')->getName(); ?>" value="" placeholder="<?php echo $this->translate('usuario.login.form.login.field.password')?>" class="<?php if ($this->element->getElement('password')->hasErrors()){ echo 'input-error'; } ?>" type="password" />
+<input class="submitlogin" type="submit" value="<?php echo $this->translate('usuario.login.form.login.submit')?>">
+
+<?php $errorsMessages =$this->element->getMessages(); ?>
+    <?php if (count($errorsMessages)>0){ ?>
+        <div class="form-error-msg"> 
+            <div id="form-registro-errores">
+                <?php foreach ($errorsMessages as $name_field=>$invalid_field){ ?>            
+                        <?php foreach ($invalid_field as $error_description){ ?>
+                            <span><?php echo $error_description; ?></span>
+                        <?php } ?>
+                <?php } ?>
+            </div>
+        </div>
+    <?php }?>

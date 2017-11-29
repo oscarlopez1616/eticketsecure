@@ -1,0 +1,69 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['admin']['gui'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Administration Panel</title>
+        <?php echo  $this->getHelper("Cargador")->cargaScripts($this->cargador_arr); ?>
+        <?php echo  $this->getHelper("Cargador")->cargaStyles($this->cargador_arr); ?>
+        
+        
+    </head>
+    <body>
+
+        <div id="head">
+                <div id="title"><img src="<?php echo $ruta_gui?>/logo-admin-ticketex.png"/></div>
+                <div id="menu">
+                    <div id="menu_top">
+                        <ul>
+                            <li<?php if($this->controlador=='sesion' || $this->controlador=='canal' || $this->controlador=='descuento' || $this->controlador=='restauracion' || $this->controlador=='pack') echo ' class="menutop-selected"'; ?>><a href="<?php echo $this->url(array("module" => "admin", "controller" => "sesion", "action" => "index"),null, true)?>">PROGRAMACIÓN DE OBRAS</a></li>
+                            <li<?php if($this->controlador=='obra' || $this->controlador=='actor' || $this->controlador=='tag' ) echo ' class="menutop-selected"'; ?>><a href="<?php echo $this->url(array("module" => "admin", "controller" => "obra", "action" => "index"),null, true)?>">ADMINISTRACIÓN DE OBRAS</a></li>
+                            <li<?php if($this->controlador=='sala' || $this->controlador=='zona') echo ' class="menutop-selected"'; ?>><a href="<?php echo $this->url(array("module" => "admin", "controller" => "sala", "action" => "index"),null, true)?>">ADMINISTRACIÓN DE SALAS</a></li>
+                        </ul>
+                    </div>
+                        <div id="menu_bot">
+                            <?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","actor","index", 'display:none'); ?>
+                            <ul>
+                                    <?php if ($this->controlador=='sala' || $this->controlador=='zona') {?>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","sala","index", 'display:none'); ?>"><a <?php if($this->controlador=='sala') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "sala", "action" => "index"),null, true)?>">Salas</a></li>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","zona","index", 'display:none'); ?>"><a <?php if($this->controlador=='zona') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "zona", "action" => "index"),null, true)?>">Zonas</a></li>
+                                    <?php }?>
+                                    <?php if ($this->controlador=='obra' || $this->controlador=='comentario' || $this->controlador=='actor' || $this->controlador=='tag') {?>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","obra","index", 'display:none'); ?>" name="admin-obra-index"><a <?php if($this->controlador=='obra' || $this->controlador=='comentario') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "obra", "action" => "index"),null, true)?>">Obras</a>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","actor","index", 'display:none'); ?>" ><a <?php if($this->controlador=='actor') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "actor", "action" => "index"),null, true)?>">Actores</a></li>    
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","tag","index", 'display:none'); ?>" ><a <?php if($this->controlador=='tag') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "tag", "action" => "index"),null, true)?>">Tags</a></li>
+                                    <?php }?>
+                                    <?php if ($this->controlador=='sesion' || $this->controlador=='restauracion' || $this->controlador=='pack' || $this->controlador=='canal' || $this->controlador=='descuento') {?>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","sesion","index", 'display:none'); ?>"><a <?php if($this->controlador=='sesion') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "sesion", "action" => "index"),null, true)?>">Sesiones</a></li>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","restauracion","index", 'display:none'); ?>"><a <?php if($this->controlador=='restauracion') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "restauracion", "action" => "index"),null, true)?>">Restauracion</a></li>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","pack","index", 'display:none'); ?>" ><a <?php if($this->controlador=='pack') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "pack", "action" => "index"),null, true)?>">Packs</a></li>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","canal","index", 'display:none'); ?>" ><a <?php if($this->controlador=='canal') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "canal", "action" => "index"),null, true)?>">Canales</a></li>
+                                        <li style="<?php echo $this->getHelper("ACL")->ACLLinksByRoleResourcePrivilege($this->ACL,$this->SessionEticketSecure->getRolId(),"admin","descuento","index", 'display:none'); ?>" ><a <?php if($this->controlador=='descuento') echo ' class="menu_bot_selected"'; ?> href="<?php echo $this->url(array("module" => "admin", "controller" => "descuento", "action" => "index"),null, true)?>">Descuentos</a></li>
+                                    <?php }?>
+                            </ul>
+                        </div>
+                    <!--
+                            <ul>
+                                <?php $i=0;?>
+                                <?php foreach ($this->crumbs as $title => $crumb) { ?>
+                                    <li><a href="<?php echo $crumb; ?>"><?php echo $title; ?></a></li>
+                                    <?php if ($i+1 < count($this->crumbs)) {?>
+                                        <li>></li>
+                                    <?php } ?>
+                                        <?php $i++; ?>
+                                <?php }?>                                    
+                                </ul>
+                    
+                    -->
+                </div>
+        </div>
+        <div id="content">
+            <?php echo $this->layout()->content; ?>
+        </div>
+		
+    </body>
+</html>
+

@@ -1,0 +1,117 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+?>
+<div id="upload-image-pop-inner">
+    <div id="upload-inner-top">
+        <h2><?php echo $this->translate('uploadfoto.title');?></h2>
+        <p><?php echo $this->translate('uploadfoto.text.1');?></p>
+        <p><?php echo $this->translate('uploadfoto.text.2');?></p>
+    </div>
+    <div id="upload-inner-bot">
+        <div id="upload-inner-zona-foto">
+            <div id="foto-exist" style="display:none;">
+                <div id="preview-big-foto"></div>
+                <div id="filtro-big-foto"></div>
+            </div>
+            <div id="loading-upload" style="display:none;">
+                <span><?php echo $this->translate('uploadfoto.loading');?> </span><img src="<?php echo $ruta_gui?>/upload-loader-4.gif" />
+            </div>
+        </div>
+        <div id="upload-controls">
+            <div id="upload-requirements">
+                <p id="requeriment-message-1"><?php echo $this->translate('uploadfoto.requirements.1');?></p>
+                <p id="requeriment-message-2"><?php echo $this->translate('uploadfoto.requirements.2');?></p>
+            </div>
+            <?php echo $this->form?>
+            <div id="button-subir-foto" onclick="ajaxUpload();"><?php echo $this->translate('uploadfoto.subriforo');?></div>
+            <div id="button-confirmar-upload" onclick="confirmImage()"></div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var actual_foto = [] ;
+    actual_foto['file_name'] = '';
+    actual_foto['file_location'] = ''
+    actual_foto['file_url'] = ''
+    
+    function ajaxUpload(){
+        //$("#form_foto").ajaxSubmit({url: 'http://localhost/ticketingrupneu/public/regalo/upload-foto/index/', type: 'post'})    
+        $("#form_foto").submit(); //Submit the form
+    }
+    
+    $("#form_foto").submit(function(e)
+    {
+        $('#requeriment-message-1').css('color', '#000');
+        $('#requeriment-message-1').css('color', '#000');
+        var formObj = $(this);
+        var formURL = formObj.attr("action");
+        var formData = new FormData(this);
+        $.ajax({
+             beforeSend: function(){
+                 $('#loading-upload').show();
+            },
+            url: formURL,
+        type: 'POST',
+            data:  formData,
+        mimeType:"multipart/form-data",
+        contentType: false,
+            cache: false,
+            processData:false,
+        success: function(data, textStatus, jqXHR)
+        {
+            $('#loading-upload').hide();
+            //alert (data) ;
+            var jsonUpload = $.parseJSON(data);
+            //alert (jsonUpload['status']);
+            if (jsonUpload['status']== 'success'){
+                actual_foto['file_name'] = jsonUpload['file_name'];
+                actual_foto['file_location'] = jsonUpload['file_location'];
+                actual_foto['file_url'] = jsonUpload['file_url'];
+                reloadBigImageFrame();
+            }else{
+                if (jsonUpload['status']== 'error'){
+                    if (jsonUpload['error']=='fileUploadErrorIniSize'){
+                        $('#requeriment-message-1').css('color', '#C34447');
+                    }
+                    if (jsonUpload['error']=='fileExtensionFalse'){
+                        $('#requeriment-message-2').css('color', '#C34447');
+                    }
+                }
+            }
+        },
+         error: function(jqXHR, textStatus, errorThrown)
+         {
+             $('#loading-upload').hide();
+         }         
+        });
+        e.preventDefault(); //Prevent Default action.
+    });
+ 
+function reloadBigImageFrame(){
+    $('#preview-big-foto').html('<img src="'+actual_foto['file_url']+'" />')
+    $('#foto-exist').fadeIn(500);   
+}
+
+function reloadSmallImageFrame(){
+    $('#preview-foto').html('<img src="'+actual_foto['file_url']+'" />')
+    $('#existe-foto-small').fadeIn(500); 
+}
+
+function setFotoNameinForm(){
+    $('input[name=imagen]').val(actual_foto['file_name']);
+}
+
+function confirmImage(){
+    if (actual_foto['file_name'] != ''){
+        reloadSmallImageFrame();
+        setFotoNameinForm();
+        closeUploadPop();
+        $('#existe-foto-small').fadeIn(500);
+    }else{
+        alert('<?php echo $this->translate('uploadfoto.alert');?>');
+    }
+}
+</script>

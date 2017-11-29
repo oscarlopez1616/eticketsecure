@@ -1,0 +1,60 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+?>
+<div id="content-retorno">
+    <?php if ($this->vista_arr['status'] == 'success'){ ?>
+        <div id="container-retorno" class="container-retorno-ok">
+            <div id="head-retorno-ok">    
+                <span><?php echo $this->translate('retorno.compra.ok.title')?></span>
+            </div>
+            <div id="body-retorno-ok">
+                <div id="body-retorno-ok-left">
+                    <span style="float:left;font-size: 16px;margin-top:0"><b><?php echo $this->translate('retorno.compra.datos.title')?></b><br /></span>
+
+                    <div style="float:left; margin-top:40px;width:250px; ">
+                        <p><b><?php echo $this->translate('retorno.compra.datos.regalo')?></b>: <br/><?php echo $this->vista_arr['producto']['nombre']?><br /><br /><br /></p>
+                        <p><b><?php echo $this->translate('retorno.compra.datos.numentradas')?></b>: <?php echo $this->vista_arr['numero_entradas']?></p>
+                        <p><b><?php echo $this->translate('retorno.compra.datos.pvptotal')?></b>: <?php echo $this->vista_arr['numero_entradas']*$this->vista_arr['producto']['pvp']?> €</p>
+                    </div>
+                </div>
+                <div id="body-retorno-ok-right">
+                    <img src="<?php echo $ruta_gui?>/<?php echo $this->vista_arr['producto']['imagen']?>">
+                </div>
+                
+                <div id="body-retorno-ok-links">
+                    <a href="<?php echo $this->vista_arr['link_tarjeta_regalo'] ?>" style="background-image: url(<?php echo $ruta_gui?>/retorno-buton-link-tarjeta-<?php echo $this->idioma?>.png);"></a>
+                    <a href="<?php echo $this->vista_arr['link_bono2x1'] ?>" style="background-image: url(<?php echo $ruta_gui?>/retorno-buton-link-2x1-<?php echo $this->idioma?>.png);"></a>
+                </div>
+                
+                <div id="body-retorno-ok-mail_receptor">
+                <?php if ($this->vista_arr['flag_email_receptor']==1){ ?>
+                        <span><?php echo $this->translate('retorno.compra.ok.mailreceptor.1')?> <?php echo $this->vista_arr['nombre_receptor']?> (<?php echo $this->vista_arr['email_receptor']?>) <?php echo $this->translate('retorno.compra.ok.mailreceptor.2')?></span>
+                <?php }?>                
+                    <span><?php echo $this->translate('retorno.compra.ok.mailcomprador.1');?> <?php echo $this->vista_arr['email_comprador']?> <?php echo $this->translate('retorno.compra.ok.mailcomprador.2');?></span>
+
+                </div>             
+            </div>
+        </div>
+    <?php }?>
+    <?php if ($this->vista_arr['status'] == 'error'){ ?>
+        <div id="container-retorno" class="container-retorno-ko">
+            <div id="head-retorno-ko">    
+                <span><?php echo $this->translate('retorno.compra.ko.title')?></span>
+            </div>
+            <div id="body-retorno-ko">
+                <span><?php echo $this->vista_arr["message"]?></span>
+                <!--<span><b>Mensaje del Banc Sabadell: <?php //echo $this->vista_arr["message_tpv"]?></b></span>-->
+            </div>
+            <a  href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' => 'index', 'action' => 'tramitar-compra', 'p1' => $this->vista_arr['id_compra']), null, true); ?>" id="buton-retorno-ko" style="background-image: url(<?php echo $ruta_gui?>/retry-pago-<?php echo $this->idioma?>.png);"></a>
+            <a  href="<?php echo $ruta['dominio'].$ruta['base']?>" id="buton-retorno-ko" style="background-image: url(<?php echo $ruta_gui?>/retorno-buton-ko-<?php echo $this->idioma?>.png);"></a>           
+        </div>
+    <?php }?>
+</div>
+<?php 
+if ($this->vista_arr['status'] == 'success'){
+    echo $this->vista_arr["analytics_js_send_transaccion"];
+    echo $this->vista_arr["facebook_conversion_regalo"];
+    echo $this->vista_arr["adwords_conversion_regalo"];
+}
+?>

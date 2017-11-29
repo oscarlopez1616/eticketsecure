@@ -1,0 +1,83 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+    $ruta_includes = $ruta['server'].$ruta['base'].$ruta['includes'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="icon" href="<?php echo $this->url(array(),null, true);?>favicon.ico" type="image/x-icon" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Regala Teatro</title>
+        <meta name="author" content="e-fbk.com">
+        <?php echo  $this->getHelper("Cargador")->cargaScripts($this->cargador_arr); ?>
+        <?php echo  $this->getHelper("Cargador")->cargaStyles($this->cargador_arr); ?>
+    </head>
+    <body>
+        <?php include_once($ruta_includes."/analyticstracking.php") ?>
+        <div id="main">
+            <div id="wrapper" style="background-image: url(<?php echo $ruta_gui?>/main_background_clean.jpg); ">
+                <div id="content">
+                    <div id="main-content">
+                        <?php if ($this->show_header=='1') { ?>
+                            <div id="inner-head" style="background: url(<?php echo $ruta_gui?>/head-text-<?php echo $this->idioma; ?>.png) center no-repeat;">
+
+                                <div id=opener-layer onclick="openHelpLayer();"></div>
+                            </div>
+                            <?php if ($this->show_cambio_idioma=='1') { ?>
+                                <div id="switcher-tikets">
+                                    <a href="<?php echo $this->url(array('idioma' => 'es', 'module' => 'regalo', 'controller' => 'index', 'action' => 'index'), null, true)?>" id="menu-es" <?php if ($this->idioma=='es') { ?> class="menu-es-active" <?php } ?>></a>
+                                    <a href="<?php echo $this->url(array('idioma' => 'ca', 'module' => 'regalo', 'controller' => 'index', 'action' => 'index'), null, true)?>" id="menu-ca" <?php if ($this->idioma=='ca') { ?> class="menu-ca-active" <?php } ?>></a>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
+                        <?php echo $this->layout()->content; ?>
+                    </div>
+                    <div id="como-funciona-layer" style="display: none; background: url(<?php echo $ruta_gui?>/como-funciona-layer-<?php echo $this->idioma?>.png) no-repeat;">
+                        <div id="top-layer">
+                            <div id="close-layer" onclick="closeHelpLayer();">
+                                <img src="<?php echo $ruta_gui?>/close-layer.png">
+                            </div>
+                        </div>
+                        <div id="content-layer">
+                            <div class="content-layer-item content-layer-item-1">
+                                <h1><?php echo $this->translate('comofunciona.t1.title');?></h1>
+                                <p><?php echo $this->translate('comofunciona.t1.content');?><p>
+                            </div>
+                            <div class="content-layer-item content-layer-item-2">
+                                <h1><?php echo $this->translate('comofunciona.t2.title');?></h1>
+                                <p><?php echo $this->translate('comofunciona.t2.content');?></p>
+                            </div>
+                            <div class="content-layer-item content-layer-item-3">
+                                <h1><?php echo $this->translate('comofunciona.t3.title');?></h1>
+                                <p><?php echo $this->translate('comofunciona.t3.content');?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="center-footer">
+                <ul>
+                    <li><a onclick="openHelpLayer();"href="#"><?php echo $this->translate('footer.c.1.1');?></a></li>
+                    <li onclick="alert('<?php echo $this->translate('footer.validez');?>')"><?php echo $this->translate('footer.c.1.2');?></li>
+                </ul>
+                <ul>
+                    <?php if (isset ($this->controlador) && isset ($this->accion) && $this->controlador == 'index' && $this->accion == 'index') { ?>
+                        <li onclick="openVideoLayer();"><?php echo $this->translate('footer.c.2.0');?></li>
+                        <li style=" cursor:default;">&copy; Grup Teatreneu <?php echo date('Y')?></li>
+                    <?php }else{ ?>
+                        <li style="background:0!important; cursor:default;">&copy; Grup Teatreneu <?php echo date('Y')?></li>
+                    <?php } ?>
+                </ul>
+                <ul style="margin-right:0">
+                    <li><a href="mailto:oscar.lopez@grupteatreneu.com"><?php echo $this->translate('footer.c.3.1');?></a></li>
+                    <li><a href="javascript:alert('<?php echo $this->translate('footer.aviso');?>')"><?php echo $this->translate('footer.c.3.2');?></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="black-layer" style="display: none;"></div>
+        <?php include_once($ruta_includes."/retargeting.php") ?>
+    </body>
+</html>

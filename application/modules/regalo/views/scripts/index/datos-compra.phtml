@@ -1,0 +1,144 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui               = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+    $ruta_galeria_regalo    = $ruta['dominio'].$ruta['base'].$ruta['imagenes']['galeria']['regalo_temporal']; 
+    $ruta_regalo            = $ruta['dominio'].$ruta['base'].$ruta['imagenes']['galeria']['regalo'];
+?>
+<div style="  float: left;margin-top: -107px;position: absolute;width: 100%; height:90px;">
+    <a href="<?php echo $this->url(array('idioma' =>$this->idioma,'module' => 'regalo', 'controller' => "index", 'action' => 'index'),null, true)?>" style="left:50%;margin-left:-225px;;width:450px;height:110px;position:absolute;">&nbsp;</a>
+</div>
+<div id="content-paso-2">
+    <div id="container-paso-2">
+        <div id="container-2-top">
+            <div id="container-2-top-left">    
+                <h3><span style="float:left;margin-top:17px;"><?php echo $this->translate('ticket.1.title.1');?> <?php echo $this->translate('ticket.1.title.2');?></span></h3>
+                <div id="paso2-form">
+                    <?php echo $this->form; ?>
+                </div>
+            </div>
+            <div id="container-2-top-right">    
+                <img id="img-producto-p2" src="<?php echo $ruta_gui?>/<?php echo $this->vista_arr['producto']['imagen']?>" />
+                <div id="zona-foto">
+                    <div id="zona-foto-text" onclick="openUploadPop('<?php echo $this->url(array('module' => 'regalo', 'controller' => "upload-foto", 'action' => 'index'),null, true)?>');">
+                        <?php echo $this->translate('datoscompra.addfoto');?>
+                    </div>
+                    <div id="existe-foto-small" style="display:none;">
+                        <div id="preview-foto"></div>
+                        <div id="filtro-foto"></div>
+                        <div id="eliminar-foto" onclick="deleteSmallFoto();" ><img src="<?php echo $ruta_gui?>/mini-delete-foto.png" /><span>Eliminar foto</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container-2-bot">
+            <div id="container-2-bot-left">
+                <div class="check-step" style="margin-top:3px;">
+                    <div class="check-step-in">
+                        <span class="check-step-span" style="margin-top:38px;margin-left:24px;width:240px;"><?php echo $this->translate('datoscompra.imprimible');?></span>
+                    </div>
+                </div>
+                <div class="check-step">
+                    <div onclick="setOutputRegaloEmail();" id="check-imagen-mail" class="check-imagen" style="cursor:pointer;"></div>
+                    <div class="check-step-in">
+                        <span class="check-step-span" style="height:46px;"><?php echo $this->translate('datoscompra.enviapormail');?></span>
+                        <input id="fake_email_receptor" class="input-clean-2" type="text" value="" onfocus="setOutputRegaloEmailTrue();"/>
+                        <div id="placeholder-error-email-receptor"></div>
+                    </div>
+                    
+                    <div class="check-step-question">
+                        <?php echo $this->getHelper("Tooltip")->tooltip($this->translate('datoscompra.enviapormail.info'), 'tooltip-mail-q', 'tooltip-regalo' ); ?>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="container-2-bot-right">
+                <div id="paso2-precio-total"><?php echo $this->vista_arr['producto']['pvp']*2?>€<br /></div>
+                <div id="paso-2-confirmar" onclick="enviaForm();"></div>
+                <div id="paso-2-despeses" onclick="enviaForm();"><?php echo $this->translate('gastos-gestion-1');?></div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div id="upload-image-pop" style="display:none;">
+    <div class="top-upload-pop">
+            <div class="close-upload-pop" onclick="closeUploadPop();">
+            </div>
+        </div>
+    <div id="upload-image-pop-content">
+        
+    </div>
+</div>
+
+<script>
+    var pvp_unitario = <?php echo $this->vista_arr['producto']['pvp'] ?>;
+    function deleteSmallFoto(){
+        $('#preview-foto').html('')
+        $('#existe-foto-small').hide(500);  
+        $('input[name=imagen]').val('');
+    }
+
+
+function menosEntradas(){
+    if ($("#paso2-num-entradas").val()>1){
+        $("#paso2-num-entradas").val(parseInt($("#paso2-num-entradas").val())-1);
+        $('#paso2-precio-total').html((parseInt($("#paso2-num-entradas").val())*pvp_unitario)+'€');
+    }
+}
+
+function masEntradas(){
+    if ($("#paso2-num-entradas").val()<99){
+        $("#paso2-num-entradas").val(parseInt($("#paso2-num-entradas").val())+1);
+        $('#paso2-precio-total').html((parseInt($("#paso2-num-entradas").val())*pvp_unitario)+'€');
+    }
+}
+
+
+function setOutputRegaloEmail(){
+    if ($('input[name=flag_email_receptor]').val() == 0) {
+        $("#check-imagen-mail").addClass('check-imagen-active');
+        $('input[name=flag_email_receptor]').val(1);
+    }else {
+        $("#check-imagen-mail").removeClass('check-imagen-active');
+        $('input[name=flag_email_receptor]').val(0);
+        $('input[name=email_receptor]').val('');
+        $('#fake_email_receptor').val('');
+    } 
+}
+
+function setOutputRegaloEmailTrue(){
+    $("#check-imagen-mail").addClass('check-imagen-active');
+    $('input[name=flag_email_receptor]').val(1);
+}
+
+function enviaForm(){
+    //Pasamos los datos del email receptor si est ael check marcado
+    if ($('input[name=flag_email_receptor]').val() == 1) {
+        $('input[name=email_receptor]').val($('#fake_email_receptor').val());
+    }
+    $('#form_regalo').submit();
+}
+
+
+$( document ).ready(function() {
+    // Inicializa el check segun los datos del formulario
+    if ($('input[name=flag_email_receptor]').val() == 0) {
+        $("#check-imagen-mail").removeClass('check-imagen-active');
+    }else{
+        $("#check-imagen-mail").addClass('check-imagen-active');
+        $('#fake_email_receptor').val($('input[name=email_receptor]').val());
+        
+    }
+    $('#placeholder-error-email-receptor').html($('#hidden-error-email-receptor').html());
+    $('#hidden-error-email-receptor').html('')
+    
+    //Pone la imagen donde corresponde si existe en el formulario
+    if ($('input[name=imagen]').val()!=''){
+        var ruta_galeria_regalo = '<?php echo $ruta_galeria_regalo ?>/'+$('input[name=imagen]').val();
+        $('#preview-foto').html('<img src="'+ruta_galeria_regalo+'" />')
+        $('#existe-foto-small').show();
+        
+    }
+});
+
+</script>

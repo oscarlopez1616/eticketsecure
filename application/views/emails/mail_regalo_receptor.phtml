@@ -1,0 +1,336 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_imagenes_email = $ruta['dominio'].$ruta['base'].$ruta['imagenes']['email'].'/mail_regalo_receptor';
+    $ruta_imagenes_regalo= $ruta['dominio'].$ruta['base'].$ruta['imagenes']['galeria']['regalo'].'/uploads';
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html style="margin-top: 0px !important; padding-top: 0px !important; width: 100%">
+<head>
+	<style type="text/css">
+		html, body{ width:100%; margin-top: 0px !important; padding-top: 0px !important; }
+		body{ background-color:#FFFFFF; margin-top: 0px !important; padding-top: 0px !important; font-family:sans-serif; }
+		table{ margin-top: 0px !important; padding-top: 0px !important; }
+		body{ padding-top:0; padding-right:0; padding-bottom:0; padding-left:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0; color:#000000 !important; font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:13px; line-height:17px; }
+		h1, .faux_h1{ padding-top:0; padding-right:0; padding-bottom:0; padding-left:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0; color:#000000 !important; font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:20px; line-height:26px; }
+		.faux_h1_color_color{ color:#000000; }
+		h2, .faux_h2{ padding-top:0; padding-right:0; padding-bottom:0; padding-left:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0; color:#000000 !important; font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:18px; line-height:26px; }
+		.faux_h2_color_color{ color:#000000; }
+		h3 { padding-top:0; padding-right:0; padding-bottom:0; padding-left:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0; color:#000000 !important; font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:15px; line-height:26px; }
+		p, .faux_p{ padding-top:0; padding-right:0; padding-bottom:0; padding-left:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0; color:#000000 !important; font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:13px; line-height:17px; }
+		.faux_p_color_color{ color:#000000; }
+		a, .faux_a{ text-decoration:underline; padding-top:0; padding-right:0; padding-bottom:0; padding-left:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0; color:#1690DD !important; font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:13px; line-height:17px; }
+		.faux_a_color_color{ color:#1122CC; }
+		.wysiwyg-text-align-right{ text-align: right; }
+		.wysiwyg-text-align-center { text-align: center; }
+		.wysiwyg-text-align-left{ text-align: left; }
+		.wysiwyg-text-align-justify{ text-align: justify; }
+	</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style="background-color: #FFFFFF; color: #000000 !important; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 13px; line-height: 17px; margin-bottom: 0; margin-left: 0px; margin-right: 0; margin-top: 0px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0px; width: 100%" bgcolor="#FFFFFF">
+	<table width="100%" cellspacing="0" cellpadding="0" align="center" style="background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px" bgcolor="#DDDDDD">
+		<tbody>
+			<tr align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+				<td valign="top" align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+					<table width="650" cellspacing="0" cellpadding="0" border="0" align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px">
+						<tbody>
+							<tr align="left" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+								<td width="650">
+									<table width="650" cellspacing="0" cellpadding="0" border="0" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-top: 0px !important; padding-top: 0px !important">
+										<tbody>
+											<tr align="left" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+												<td width="650">
+													<table width="650" cellspacing="0" cellpadding="0" border="0" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-top: 0px !important; padding-top: 0px !important">
+														<tbody>
+															<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0px; border-top-width: 0; height: 20px">
+																<td width="650" valign="top" height="20" align="left" style="background-color: #FFFFFF" bgcolor="#FFFFFF"></td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table align="center" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0px" bgcolor="#DDDDDD">
+		<tr align="center" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+			<td align="center" valign="top" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+				<table width="650" align="center" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0px">
+					<tbody>
+						<tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+							<td width="650">
+								<table width="650" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+									<tbody>
+										<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+											<td width="32" height="55" align="left" valign="top" style="">
+												<img height="55" src="<?php echo $ruta_imagenes_email?>/head-left.jpg" style="border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; display: block; line-height: 1; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0" width="32">
+											</td>
+											<td width="586" height="55" align="left" valign="top" style="">
+												<img height="55" src="<?php echo $ruta_imagenes_email?>/head-mid.jpg" style="border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; display: block; line-height: 1; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0" width="586">
+											</td>
+											<td width="32" height="55" align="left" valign="top" style="">								
+												<img height="55" src="<?php echo $ruta_imagenes_email?>/head-right.jpg" style="border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; display: block; line-height: 1; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0" width="32">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+							<td width="650">
+								<table width="650" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+									<tbody>
+										<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+											<td width="32" align="left" valign="top" bgcolor="#DDDDDD" style="">
+											</td>
+											<td width="586" align="left" valign="top">
+												<table width="586" align="center" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0px">
+													<tbody>
+														<tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+																	<tbody>
+																		<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+																			<td width="586" height="31" align="left" valign="top" style="">
+																				<img height="31" src="<?php echo $ruta_imagenes_email?>/entradas-mid.jpg" style="border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; display: block; line-height: 1; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0" width="586">
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+														<tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+																	<tbody>
+																		<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+																			<td width="30" height="105" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																			</td>
+																			<td width="263" height="105" align="left" valign="top" bgcolor="#ffffff">
+																				<!-- TEXTO - CABECERA -->
+																				<h2 style="margin-top:40px;"><?php echo $this->translate('mail.receptor.title')?></h2>
+																			</td>
+																			<td width="293" height="105" align="left" valign="top" style="">
+																				<img height="105" src="<?php echo $ruta_imagenes_email?>/entradas-bot.jpg" style="border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; display: block; line-height: 1; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0" width="293">
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+														<!-- INFO ENTRADAS-->
+														<tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+																	<tbody>
+																		<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+																			<td width="30" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																			</td>
+																			<td width="525" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																				<p><?php echo $this->translate('mail.receptor.body.1')?> <?php echo $this->user_data_arr['nombre_receptor']?>!</p>
+																			</td>
+																			<td width="31" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+                                                                                                                        <tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+																	<tbody>
+																		<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+																			<td width="586" height="20" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+														<?php if ($this->user_data_arr['ruta_imagen']!=''){ ?>
+                                                                                                                <tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+                                                                                                                                    <tbody>
+                                                                                                                                            <tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+                                                                                                                                                <td width="30" align="left" valign="top" bgcolor="#FFFFFF" style="">
+                                                                                                                                                </td>    
+                                                                                                                                                <td width="150" height="150" align="left" valign="top" bgcolor="#FFFFFF" style="">
+                                                                                                                                                    <img width="150" height="150" src="<?php echo $ruta_imagenes_regalo?>/<?php echo $this->user_data_arr['ruta_imagen']?>" style="border-bottom-width: 0; border-left-width: 0; border-right-width: 0; border-top-width: 0; display: block; line-height: 1; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0">
+                                                                                                                                                </td>
+                                                                                                                                                <td width="30" height="10" align="left" valign="top" bgcolor="#FFFFFF" style="">
+
+                                                                                                                                                </td>
+                                                                                                                                                <td width="346" height="105" align="left" valign="top" bgcolor="#ffffff">
+                                                                                                                                                    <p><br /><?php echo $this->user_data_arr['nombre_comprador']?> <?php echo $this->translate('mail.receptor.body.2')?></p>
+                                                                                                                                                    <p><br /><?php echo $this->translate('mail.receptor.body.3')?></p>
+                                                                                                                                                </td>
+                                                                                                                                                <td width="30" align="left" valign="top" bgcolor="#FFFFFF" style="">
+                                                                                                                                                </td>   
+                                                                                                                                            </tr>
+                                                                                                                                    </tbody>
+                                                                                                                                </table>                                                                                                                                                                
+															</td>
+														</tr>
+                                                                                                                <?php } else{ ?>
+                                                                                                                <tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+                                                                                                                                    <tbody>
+                                                                                                                                            <tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+                                                                                                                                                <td width="30" align="left" valign="top" bgcolor="#FFFFFF" style="">
+                                                                                                                                                </td>    
+                                                                                                                                               
+                                                                                                                                                <td width="526" height="105" align="left" valign="top" bgcolor="#ffffff">
+                                                                                                                                                    <p><br /><?php echo $this->user_data_arr['nombre_comprador']?> <?php echo $this->translate('mail.receptor.body.2')?></p>
+                                                                                                                                                    <p><br /><?php echo $this->translate('mail.receptor.body.3')?></p>
+                                                                                                                                                </td>
+                                                                                                                                                <td width="30" align="left" valign="top" bgcolor="#FFFFFF" style="">
+                                                                                                                                                </td>   
+                                                                                                                                            </tr>
+                                                                                                                                    </tbody>
+                                                                                                                                </table>                                                                                                                                                                
+															</td>
+														</tr>
+                                                                                                                <?php }?>
+														<!-- END INFO ENTRADAS -->														
+														<!-- SESION SEPARADOR -->
+														<tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+																	<tbody>
+																		<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+																			<td width="586" height="20" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+														<!-- END - SESION SEPARADOR -->
+														<!-- INFO ENTRADAS-->
+														<tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+																	<tbody>
+																		<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+																			<td width="30" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																			</td>
+																			<td width="525" align="left" valign="top" bgcolor="#FFFFFF" style="">
+
+																				<p><br /><?php echo $this->translate('mail.receptor.body.4')?> <a style="color:#1690DD;" href="<?php echo $this->user_data_arr['link_reservar']?>">aquí</a> <?php echo $this->translate('mail.receptor.body.42')?></p>
+																				<a style="color:#1690DD;" href="<?php echo $this->user_data_arr['link_reservar']?>"><?php echo $this->translate('mail.receptor.body.5')?></a>
+																				
+                                                                                                                                                                <p><br /><?php echo $this->translate('mail.receptor.body.6')?></p>
+																				<a href="http://regalo.teatreneu.com"><?php echo $this->translate('mail.receptor.body.7')?></a>
+																			</td>
+																			<td width="31" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+														<!-- END INFO ENTRADAS -->														
+														<!-- SESION SEPARADOR -->
+														<tr align="left" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+															<td width="586">
+																<table width="586" cellspacing="0" cellpadding="0" border="0" style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0; margin-top: 0px !important; padding-top: 0px !important">
+																	<tbody>
+																		<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0; border-top-width: 0">
+																			<td width="586" height="20" align="left" valign="top" bgcolor="#FFFFFF" style="">
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+														<!-- END - SESION SEPARADOR -->
+													</tbody>
+												</table>
+											</td>
+											<td width="32" align="left" valign="top" bgcolor="#DDDDDD" style="">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellspacing="0" cellpadding="0" align="center" style="background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px" bgcolor="#DDDDDD">
+		<tbody>
+			<tr align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+				<td valign="top" align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+					<table width="650" cellspacing="0" cellpadding="0" border="0" align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px">
+						<tbody>
+							<tr align="left" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+								<td width="650">
+									<table width="650" cellspacing="0" cellpadding="0" border="0" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-top: 0px !important; padding-top: 0px !important">
+										<tbody>
+											<tr align="left" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+												<td width="650">
+													<table width="650" cellspacing="0" cellpadding="0" border="0" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-top: 0px !important; padding-top: 0px !important">
+														<tbody>
+															<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0px; border-top-width: 0; height: 20px">
+																<td width="650" valign="top" height="20" align="left" style="background-color: #DDDDDD" bgcolor="#DDDDDD"></td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table width="100%" cellspacing="0" cellpadding="0" align="center" style="background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px" bgcolor="#DDDDDD">
+		<tbody>
+			<tr align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+				<td valign="top" align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+					<table width="650" cellspacing="0" cellpadding="0" border="0" align="center" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px">
+						<tbody>
+							<tr align="left" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+								<td width="650">
+									<table width="650" cellspacing="0" cellpadding="0" border="0" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-top: 0px !important; padding-top: 0px !important">
+										<tbody>
+											<tr align="left" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px">
+												<td width="650">
+													<table width="650" cellspacing="0" cellpadding="0" border="0" style="border-bottom-style: none; border-bottom-width: 0px; border-collapse: collapse; border-left-style: none; border-left-width: 0px; border-right-style: none; border-right-width: 0px; border-spacing: 0px; border-top-style: none; border-top-width: 0px; margin-top: 0px !important; padding-top: 0px !important">
+														<tbody>
+															<tr style="border-bottom-width: 0; border-collapse: collapse; border-left-width: 0; border-right-width: 0; border-spacing: 0px; border-top-width: 0; height: 20px">
+																<td width="650" valign="top" height="20" align="left" style="background-color: #FFFFFF" bgcolor="#FFFFFF"></td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

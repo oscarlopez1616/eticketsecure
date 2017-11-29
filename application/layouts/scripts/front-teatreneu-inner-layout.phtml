@@ -1,0 +1,72 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['frontteatreneu']['gui'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title><?php if (isset ($this->metatag)) echo $this->metatag['title']?> - TeatreNeu</title>
+        <meta name="keywords" content="<?php if (isset ($this->metatag)) echo $this->metatag['description']?>" />
+        <meta name="description" content="<?php if (isset ($this->metatag)) echo $this->metatag['keywords']?>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TeatreNeu</title>
+        <link media="screen" rel="stylesheet" type="text/css" href="http://localhost/ticketingrupneu/public/front-teatreneu/css/style.css"/>
+    </head>
+<body>
+	<div id="wrapper_top">	
+            <div id="top_menu">
+                <ul>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'index'), null, true)?>"            <?php if ($this->controlador=='index' && $this->accion=='index') echo 'class="active" '?>>INICI</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'espectaculos'), null, true)?>"     <?php if ($this->controlador=='index' && $this->accion=='espectaculos') echo 'class="active" '?>>ESPECTACLES</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'actualidad'), null, true)?>"       <?php if ($this->controlador=='index' && $this->accion=='actualidad') echo 'class="active" '?>>ACTUALITAT</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'club'), null, true)?>"             <?php if ($this->controlador=='index' && $this->accion=='club') echo 'class="active" '?>>CLUB</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'quienes-somos'), null, true)?>"    <?php if ($this->controlador=='index' && $this->accion=='quienes-somos') echo 'class="active" '?>>QUI SOM?</a> </li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'salas'), null, true)?>"            <?php if ($this->controlador=='index' && $this->accion=='salas') echo 'class="active" '?>>SALES</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'servicios'), null, true)?>"        <?php if ($this->controlador=='index' && $this->accion=='servicios') echo 'class="active" '?>>SERVEIS</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'prensa'), null, true)?>"           <?php if ($this->controlador=='index' && $this->accion=='prensa') echo 'class="active" '?>>PREMSA</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'info'), null, true)?>"    <?php if ($this->controlador=='index' && $this->accion=='info') echo 'class="active" '?>>ON SOM?</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'contacto'), null, true)?>"         <?php if ($this->controlador=='index' && $this->accion=='contacto') echo 'class="active" '?>>CONTACTE</a></li>			
+                </ul>
+            </div>
+	</div>
+<div class="wrapper">
+    <div id="logo_neu"><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'index'), null, true)?>"></a></div>
+    <?php echo $this->layout()->content; ?>
+</div >
+
+<div class="anchor_line dark_bg" style="margin-bottom:-3px;">
+	<div class="wrapper footer_links">
+		<div class="column left "><h3>Sobre nosotros</h3>
+		<ul>
+			<li><a href="#">TEATRE NEU</a></li>
+			<li><a href="#">ESPECTACLES</a></li>
+			<li><a href="#">ACTUALITAT</a></li>
+			<li><a href="#">CLUB TEATRE NEU</a></li>
+			<li><a href="#">QUI SOM?</a> </li>
+			<li><a href="#">LES NOSTRES SALES</a></li>
+			<li><a href="#">ON SOM?</a></li>
+			<li><a href="#">CONTACTE</a></li>			
+		</ul>
+		</div>
+		<div class="left "><h3>Actualidad</h3><img src="<?php echo $ruta_gui; ?>/regalateatre.jpg">
+			<p>Aquestes Festes REGALA TEATRE! El millor dels Regals!<br /> 
+			Regala Humor! Tu regales les entrades i l´afortunat/da tria els <br />
+			espectacles, el dia i l´hora que hi vol anar i amb qui. Així de fàcil! </p>
+		</div>
+		<div class="half_column right "><h3>Links interesantes</h3>
+		<ul>
+			<li><a href="#">TEATRE NEU</a></li>
+			<li><a href="#">ESPECTACLES</a></li>
+			<li><a href="#">ACTUALITAT</a></li>
+			<li><a href="#">CLUB TEATRE NEU</a></li>
+			<li><a href="#">QUI SOM?</a> </li>
+			<li><a href="#">LES NOSTRES SALES</a></li>
+			<li><a href="#">ON SOM?</a></li>
+			<li><a href="#">CONTACTE</a></li>			
+		</ul>
+		</div>
+	</div>
+	<div class="blank_space"></div>
+</div>
+</body>
+</html>

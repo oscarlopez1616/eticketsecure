@@ -1,0 +1,583 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+    $ruta_obras_regalo = $ruta['dominio'].$ruta['base'].$ruta['imagenes']['galeria']['regalo'].'/obras';
+    if(!isset($_COOKIE["regalo_visit"])){
+        setcookie("regalo_visit", 1, time()+2678400, "/", $ruta['cookie']['regalo'] );
+        $flag_video = true;
+    }else{
+        $flag_video = false;
+    }
+?>
+    <div id="content-paso-1">
+        <div class="ticket ticket-first ticket-cotent-1" style="background-image: url(<?php echo $ruta_gui?>/back-ticket-1-<?php echo $this->idioma?>.png);">
+            <div id="sello" style="background-image: url(<?php echo $ruta_gui?>/sello2x1-<?php echo $this->idioma?>.png);" ></div>
+            <div class="ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.1.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.1.title.2');?></h1>
+                    <div style="float:left;height:140px;">
+                        <p><?php echo $this->translate('ticket.1.text');?></p>
+                    </div>
+                    <div class="option-ticket selected-option-ticket">
+                        <?php echo $this->translate('ticket.1.boton');?> <b>14€</b>
+                    </div>
+                </div>
+                <div class="ticket-content-right">
+                    <div class="ver-obras-button" onclick="openListaObras('1')"><?php echo $this->translate('index.obras_incluidas');?></div>
+                    <span>14€</span>
+                    <div class="comprar-button-1"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 15 ), null, true)?>"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+        </div>
+        
+        <div class="ticket ticket-no-first ticket-cotent-5" style="background-image: url(<?php echo $ruta_gui?>/back-ticket-5-<?php echo $this->idioma?>.png);">
+             <div class="ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.5.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.5.title.2');?></h1>
+
+                    <div style="float:left;height:110px;">
+                        <p><?php echo $this->translate('ticket.5.text');?></p>
+                    </div>
+                    <div class="option-ticket selected-option-ticket" style="width:220px;padding-left:30px;">
+                        <?php echo $this->translate('ticket.5.boton');?> <b>14€</b>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:84px;">
+                    <div class="ver-obras-button" onclick="openListaObrasOrgasmos();"><?php echo $this->translate('index.obras_incluidas_orgasmos');?></div>
+                    <span>14€</span>
+                    <div class="comprar-button-1"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 20 ), null, true)?>"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+        </div>
+        <div class="ticket ticket-no-first ticket-cotent-4" style="background-image: url(<?php echo $ruta_gui?>/back-ticket-4-<?php echo $this->idioma?>.png);">
+             <div class="ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.4.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.4.title.2');?></h1>
+
+                    <div style="float:left;height:110px;">
+                        <p><?php echo $this->translate('ticket.4.text');?></p>
+                    </div>
+                    <div class="option-ticket selected-option-ticket" style="width:220px;padding-left:30px;">
+                        <?php echo $this->translate('ticket.4.boton');?> <b>14€</b>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:84px;">
+                    <div class="ver-obras-button" onclick="openListaObrasRubianes();"><?php echo $this->translate('index.obras_incluidas_rubianes');?></div>
+                    <span>14€</span>
+                    <div class="comprar-button-1"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 19 ), null, true)?>"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+        </div>
+        <div class="ticket ticket-no-first ticket-cotent-2" style="background-image: url(<?php echo $ruta_gui?>/back-ticket-2-<?php echo $this->idioma?>.png);">
+            <div class="ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.2.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.2.title.2');?></h1>
+
+                    <div style="float:left;height:140px;">
+                        <p><?php echo $this->translate('ticket.2.text');?></p>
+                    </div>
+                    <div class="option-ticket selected-option-ticket">
+                        <?php echo $this->translate('ticket.2.boton');?> <b>8.5€</b>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:84px;">
+                    <div class="ver-obras-button" onclick="openListaObras('2')"><?php echo $this->translate('index.obras_incluidas');?></div>
+                    <span>8.5€</span>
+                    <div class="comprar-button-1"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 16 ), null, true)?>"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+        </div>
+        <div class="ticket ticket-no-first ticket-cotent-3" style="background-image: url(<?php echo $ruta_gui?>/back-ticket-3-<?php echo $this->idioma?>.png);">
+            <div class="ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.3.title.1');?></h2>
+                    <h1 style="line-height:24px;width:280px;"><?php echo $this->translate('ticket.3.title.2');?></h1>
+
+                    <div style="float:left;height:105px;">
+                        <p><?php echo $this->translate('ticket.3.text');?></p>
+                    </div>
+                    <div class="option-c-1 option-c-1-n-1 option-ticket-open option-ticket selected-option-ticket" onclick="setTicketOption(1,1,'<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 17 ), null, true)?>', 15);" >
+                        <?php echo $this->translate('ticket.3.boton.1');?> <b>14 + 1 €</b>
+                    </div>
+                    <div class="option-c-1 option-c-1-n-2 option-ticket-open option-ticket" onclick="setTicketOption(1,2,'<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 18 ), null, true)?>', 18);">
+                        <?php echo $this->translate('ticket.3.boton.2');?> <b>14 + 4 €</b>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:90px;">
+                    <div class="ver-obras-button" onclick="openListaObras('3')"><?php echo $this->translate('index.obras_incluidas');?></div>
+                    <span>8.5€</span>
+                    <div class="comprar-button-1"><a class="comprar-collection-1" href="#"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>      
+        </div>
+        
+    </div>
+
+
+    <div id="lista-obras-t1" class="lista-obras-common" style="display:none; background: url(<?php echo $ruta_gui?>/back-lista-obras-ticket-1-<?php echo $this->idioma?>.png) no-repeat;">
+        <div class="top-lista-obras">
+            <div class="close-lista-obras" onclick="closeListaObras('1');">
+            </div>
+        </div>
+        <div id="content-lista-obras-t1">
+            <div class="lista-ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.1.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.1.title.2');?></h1>
+
+                    <div style="float:left;height:80px;">
+                        <p><?php echo $this->translate('ticket.1.text.popobras');?></p>
+                    </div>
+                    <div class="option-ticket selected-option-ticket">
+                        <?php echo $this->translate('ticket.1.boton');?> <b>14€</b>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:76px;">
+                    <span>14€</span>
+                    <div class="comprar-button-1"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 15 ), null, true)?>"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+            <div class="obras-en-pop">
+                <div class="obras-pop-title"><?php echo $this->translate('index.obras_incluidas_regalo');?></div>
+                <div id="obras-move-top-1" class="obras-move-top" onclick="lessObras(1)"></div>
+                <div class="las-obras-en-pop">
+                    <div id="las-obras-inner-1" class="las-obras-inner">
+                        <a target="_blank" href="http://www.teatreneu.com/espectacles_detall.php?id=32">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/impro-show.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-503/Jordi-Pota-presenta-I-per-que-no">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/iperqueno.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/magia-kids-landing.php">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/magiakids.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-487/Diario-de-un-cuarenton">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo?>/cuarenton.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-422/Todo-sobre-mi-pene">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/todo-sobre-mi-pene.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-509/GENERACION-DEL-70">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/generaciondel80.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-514/Divorciadas-evangelicas-y-vegetarianas">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/divorciadas.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-493/AGENCIA-MATRIMONIAL-7D-AMOR">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/7damor.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-494/The-Big-Van-Theory----Monologos-cientificos">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/bigvan.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-488/Blancaneus-i-els-set-nans">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/blancaneus.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-479/Soltero-a-los-30">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/soltero30.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-512/CAL-QUE-NEVI-NADAL-MUSICAL">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/cal-que-nevi.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        
+                        <a target="_blank" href="http://teatreneu.com/e-169/La-Caputxeta-i-el-Llop">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/caputxeta.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="obras-move-bot-1" class="obras-move-bot" onclick="moreObras(1)"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="lista-obras-t2" class="lista-obras-common" style="display:none;background: url(<?php echo $ruta_gui?>/back-lista-obras-ticket-2-<?php echo $this->idioma?>.png) no-repeat;">
+        <div class="top-lista-obras">
+            <div class="close-lista-obras" onclick="closeListaObras('2');">
+            </div>
+        </div>
+        <div id="content-lista-obras-t2">
+            <div class="lista-ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.2.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.2.title.2');?></h1>
+
+                    <div style="float:left;height:80px;">
+                        <p><?php echo $this->translate('ticket.2.text.popobras');?></p>
+                    </div>
+                    <div class="option-ticket selected-option-ticket">
+                        <?php echo $this->translate('ticket.1.boton');?> <b>8.5€</b>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:76px;">
+                    <span>8.5€</span>
+                    <div class="comprar-button-1"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 16 ), null, true)?>"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+            <div class="obras-en-pop">
+                <div class="obras-pop-title"><?php echo $this->translate('index.obras_incluidas_regalo');?></div>
+                <div id="obras-move-top-2" class="obras-move-top" onclick="lessObras(2)"></div>
+                <div class="las-obras-en-pop">
+                    <div id="las-obras-inner-2" class="las-obras-inner">
+                        <a target="_blank" href="http://teatreneu.com/magia-kids-landing.php">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/magiakids.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-488/Blancaneus-i-els-set-nans">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/blancaneus.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        
+                        <a target="_blank" href="http://teatreneu.com/e-169/La-Caputxeta-i-el-Llop">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/caputxeta.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="obras-move-bot-2" class="obras-move-bot" onclick="moreObras(2)"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="lista-obras-t3" class="lista-obras-common" style="display:none; background: url(<?php echo $ruta_gui?>/back-lista-obras-ticket-3-<?php echo $this->idioma?>.png) no-repeat;">
+        <div class="top-lista-obras">
+            <div class="close-lista-obras" onclick="closeListaObras('3');">
+            </div>
+        </div>
+        <div id="content-lista-obras-t3">
+            <div class="lista-ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.3.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.3.title.2');?></h1>
+
+                    <div style="float:left;height:20px;">
+                        <p><?php echo $this->translate('ticket.3.text.popobras');?></p>
+                    </div>
+                    <div class="option-c-1 option-c-1-n-1 option-ticket-open option-ticket selected-option-ticket" onclick="setTicketOption(1,1,'<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 17 ), null, true)?>', 13);" >
+                        <?php echo $this->translate('ticket.3.boton.1');?> <b>12 + 1 €</b>
+                    </div>
+                    <div class="option-c-1 option-c-1-n-2 option-ticket-open option-ticket" onclick="setTicketOption(1,2,'<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 18 ), null, true)?>', 16);">
+                        <?php echo $this->translate('ticket.3.boton.2');?> <b>12 + 4 €</b>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:76px;">
+                    <span class="pvp-collection-1">13€</span>
+                    <div class="comprar-button-1"><a class="comprar-collection-1" href="#"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+            <div class="obras-en-pop">
+                <div class="obras-pop-title"><?php echo $this->translate('index.obras_incluidas_regalo');?></div>
+                <div id="obras-move-top-3" class="obras-move-top" onclick="lessObras(3)"></div>
+                <div class="las-obras-en-pop">
+                    <div id="las-obras-inner-3" class="las-obras-inner">
+                        <a target="_blank" href="http://www.teatreneu.com/espectacles_detall.php?id=32">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/impro-show.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-503/Jordi-Pota-presenta-I-per-que-no">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/iperqueno.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/magia-kids-landing.php">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/magiakids.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-487/Diario-de-un-cuarenton">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo?>/cuarenton.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-422/Todo-sobre-mi-pene">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/todo-sobre-mi-pene.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-509/GENERACION-DEL-70">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/generaciondel80.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-514/Divorciadas-evangelicas-y-vegetarianas">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/divorciadas.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-493/AGENCIA-MATRIMONIAL-7D-AMOR">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/7damor.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-494/The-Big-Van-Theory----Monologos-cientificos">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/bigvan.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-488/Blancaneus-i-els-set-nans">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/blancaneus.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-479/Soltero-a-los-30">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/soltero30.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        <a target="_blank" href="http://teatreneu.com/e-512/CAL-QUE-NEVI-NADAL-MUSICAL">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/cal-que-nevi.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                        
+                        <a target="_blank" href="http://teatreneu.com/e-169/La-Caputxeta-i-el-Llop">
+                            <div class="obra-item-pop">
+                                <img class="obra-item-pop-img" src="<?php echo $ruta_obras_regalo ?>/caputxeta.jpg">
+                                <div class="plus-info-obra"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="obras-move-bot-3" class="obras-move-bot" onclick="moreObras(3)"></div>
+            </div>
+        </div>
+    </div>
+    <div id="lista-obras-t4" class="lista-obras-common" style="display:none; background: url(<?php echo $ruta_gui?>/back-lista-obras-ticket-4-<?php echo $this->idioma?>.png) no-repeat;">
+        <div class="top-lista-obras">
+            <div class="close-lista-obras" onclick="closeListaObrasRubianes();">
+            </div>
+        </div>
+        <div id="content-lista-obras-t4">
+            <div class="lista-ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.4.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.4.title.2');?></h1>
+
+                    <div style="float:left;height:20px;">
+                        <p><?php echo $this->translate('ticket.4.text.popobras');?></p>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:76px;">
+                    <span>14€</span>
+                    <div class="comprar-button-1"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 19 ), null, true)?>"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+            <div class="obras-en-pop" style="margin-top:30px;">
+                <div class="obras-pop-title"><?php echo $this->translate('index.obras_incluidas_regalo_rubianes');?></div>
+                <div id="obras-pop-newcontent-4"></div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div id="lista-obras-t5" class="lista-obras-common" style="display:none; background: url(<?php echo $ruta_gui?>/back-lista-obras-ticket-5-<?php echo $this->idioma?>.png) no-repeat;">
+        <div class="top-lista-obras">
+            <div class="close-lista-obras" onclick="closeListaObrasOrgasmos();">
+            </div>
+        </div>
+        <div id="content-lista-obras-t4">
+            <div class="lista-ticket-content">
+                <div class="ticket-content-left">    
+                    <h2><?php echo $this->translate('ticket.5.title.1');?></h2>
+                    <h1 style="width:280px;"><?php echo $this->translate('ticket.5.title.2');?></h1>
+
+                    <div style="float:left;height:20px;">
+                        <p><?php echo $this->translate('ticket.5.text.popobras');?></p>
+                    </div>
+                </div>
+                <div class="ticket-content-right" style="margin-top:76px;">
+                    <span>14€</span>
+                    <div class="comprar-button-1"><a href="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 20 ), null, true)?>"><img src="<?php echo $ruta_gui?>/comprar-boton-1.jpg"></a></div>
+                </div>
+            </div>    
+            <div class="obras-en-pop" style="margin-top:30px;">
+                <div class="obras-pop-title"><?php echo $this->translate('index.obras_incluidas_regalo_orgasmos');?></div>
+                <div id="obras-pop-newcontent-5">
+                    <?php echo $this->translate('ticket.5.sinopsis-producto');?>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="video-layer" style="display:none; background: url(<?php echo $ruta_gui?>/back-video-1.png) no-repeat;">
+        <div id="top-video-layer">
+            <div id="close-video-layer" onclick="closeVideoLayer();">
+                <img src="<?php echo $ruta_gui?>/close-layer.png">
+            </div>
+        </div>
+        <span style="margin-top:-20px;"><?php echo $this->translate('home.video.title');?></span>
+        <span class="video-span-subtitle"><?php echo $this->translate('home.video.subtitle');?></span>
+        <span onclick="closeVideoLayer();" class="video-span-closetitle"><?php echo $this->translate('home.video.closetitle');?></span>
+        <div id="video-content-layer"></div>
+    </div>
+<script>
+    var num_items_pop_obras = [];
+    num_items_pop_obras[0] = 'empty';
+    num_items_pop_obras[1] = 13;
+    num_items_pop_obras[2] = 3;
+    num_items_pop_obras[3] = 13;
+    //Inicializamos el boton comprar tel ticket OBRA+COMPLEMENTO
+    setTicketOption(1,1,'<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' =>'index', 'action' => 'datos-compra', 'id_producto' => 17 ), null, true)?>', 15);
+    
+    function setTicketOption(collection, number, url, pvp){
+    $(".option-c-"+collection).removeClass('selected-option-ticket');
+    $(".option-c-"+collection+"-n-"+number).addClass('selected-option-ticket');
+    $(".comprar-collection-"+collection).attr("href", url);
+    $(".pvp-collection-"+collection).html(pvp+'€');
+}
+
+function openListaObras(id_obra){
+    $("#black-layer").show();
+    $('#las-obras-inner-'+id_obra).css('margin-top', -0);
+    actual_pop_obras[id_obra] = 0;
+    $("#lista-obras-t"+id_obra).fadeIn(500);
+    $("#obras-move-top-"+id_obra).removeClass('obras-move-top-enable');
+    var num_pages = (Math.ceil(num_items_pop_obras[id_obra]/12));
+    if ((num_pages)>1){
+        $("#obras-move-bot-"+id_obra).addClass('obras-move-bot-enable');
+    }
+}
+function closeListaObras(id_obra){
+    $("#black-layer").hide();
+    $("#lista-obras-t"+id_obra).hide();
+}
+
+function moreObras(collection){
+    var num_pages = (Math.ceil(num_items_pop_obras[collection]/12));
+    if (actual_pop_obras[collection]<(num_pages-1)){
+        actual_pop_obras[collection]++;
+        $('#las-obras-inner-'+collection).css('margin-top', -(parseInt(actual_pop_obras[collection]*multiplier_pop_obras)));
+        $("#obras-move-top-"+collection).addClass('obras-move-top-enable')
+        if (actual_pop_obras[collection]==(num_pages-1)){
+            $("#obras-move-bot-"+collection).removeClass('obras-move-bot-enable')    
+        }
+    }
+    
+}
+
+function lessObras(collection){
+    
+    var num_pages = (Math.ceil(num_items_pop_obras[collection]/12));
+    if (actual_pop_obras[collection]>0){
+        actual_pop_obras[collection]--;
+        $('#las-obras-inner-'+collection).css('margin-top', -(parseInt(actual_pop_obras[collection]*multiplier_pop_obras)));
+        if (actual_pop_obras[collection]==0){
+            $("#obras-move-top-"+collection).removeClass('obras-move-top-enable')    
+        }
+        if (actual_pop_obras[collection]<(num_pages-1)){
+            $("#obras-move-bot-"+collection).addClass('obras-move-bot-enable')    
+        }
+    }
+}
+    
+    <?php if ($flag_video) {?>
+    $( document ).ready(function() {
+        openVideoLayer();
+    });
+    <?php } ?>
+
+    function closeVideoLayer(){
+        $("#video-content-layer").html('');
+        $("#black-layer").hide();
+        $("#video-layer").hide();
+    }
+
+    function openVideoLayer(){
+        $("#video-content-layer").html('<iframe src="//player.vimeo.com/video/114895985?autoplay=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+        $("#black-layer").show();
+        $("#video-layer").show();
+        
+        window.scrollTo(0, 80);
+    }
+    
+    
+    function openListaObrasRubianes(){
+        $("#black-layer").show();
+        $('#las-obras-inner-4').css('margin-top', -0);   
+        $("#lista-obras-t4").fadeIn(500);
+        $("#obras-move-top-4").removeClass('obras-move-top-enable');
+        $("#obras-pop-newcontent-4").html('<iframe src="//player.vimeo.com/video/114161823?autoplay=1" width="600" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+    }
+    
+    function closeListaObrasRubianes(){
+        $("#black-layer").hide();
+        $("#lista-obras-t4").hide();
+        $("#obras-pop-newcontent-4").html('');
+    }
+    
+    function openListaObrasOrgasmos(){
+        $("#black-layer").show();
+        $('#las-obras-inner-5').css('margin-top', -0);   
+        $("#lista-obras-t5").fadeIn(500);
+        $("#obras-move-top-5").removeClass('obras-move-top-enable');
+    }
+    
+    function closeListaObrasOrgasmos(){
+        $("#black-layer").hide();
+        $("#lista-obras-t5").hide();
+        $("#obras-pop-newcontent-5").html('');
+    }
+    
+</script>
+

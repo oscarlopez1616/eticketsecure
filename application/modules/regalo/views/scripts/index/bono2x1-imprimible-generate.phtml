@@ -1,0 +1,85 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+?>
+<head>
+    <link rel="icon" href="/ticketingrupneu/public/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Regala Teatro</title>
+    <body>
+        <style>
+            body{
+                font-family: Arial;
+                margin:0;
+            }
+            #bono-back{
+                width:650px;
+                height:320px;
+            }
+            
+            #background-bono{
+                width:650px;
+                height:320px;
+                position:absolute;
+            }
+            #bono-content{
+                position:absolute;
+                width:650px;
+                height:320px;
+            }
+            #bono_localizador{
+                float:left;
+                margin-left:45px;
+                margin-top:250px;
+                width:165px;               
+            }
+            
+            #bono_localizador span{
+                float:left;
+                margin-top:3px;    
+                width:165px;
+                text-align:center;
+            }
+            #bono_text{
+                float:left;
+                margin-left:17px;
+                margin-top:197px;
+                width:240px;
+                font-size:14px;
+                line-height:20px;
+            }
+            #bono_text span{
+                float:left;
+                width:240px;
+            }
+            
+            .blue_text{
+                color:#134c79;
+                font-weight:bold;
+            }
+            #bono_qr{
+                margin-top:205px;
+                margin-left:24px;
+                width:82px;
+                height:82px;
+                
+            }
+            
+        </style>
+        <div id="bono-back">
+            <img id="background-bono" src="<?php echo $ruta_gui?>/back-bono2x1-<?php echo $this->idioma?>.jpg">
+            <div id="bono-content">
+                <div id="bono_localizador">
+                    <span><?php echo $this->translate('bono2x1.localizador')?></span>
+                    <span><?php echo $this->vista_arr['localizador']?></span>
+                </div>
+                <div id="bono_text">
+                    <span><?php echo $this->translate('bono2x1.text1')?> <b><?php echo $this->translate('bono2x1.text2')?></b></span>
+                    
+                </div>
+                
+                <img id="bono_qr" src="<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'default', 'controller' => 'ticketing-utils', 'action' =>'qr', 'ct' => $this->vista_arr['localizador']), null, true)?>">
+            </div>
+
+        </div>
+    </body>

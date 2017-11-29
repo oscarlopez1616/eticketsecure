@@ -1,0 +1,69 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['adminusuario']['gui'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="icon" href="<?php echo $this->url(array(),null, true);?>favicon.ico" type="image/x-icon" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Administration Panel</title>
+        <?php echo  $this->getHelper("Cargador")->cargaScripts($this->cargador_arr); ?>
+        <?php echo  $this->getHelper("Cargador")->cargaStyles($this->cargador_arr); ?>
+    </head>
+    <body>
+        <div id="wrapper">
+                <div id="side-holder"></div>
+                <div id="side">
+                    <a href="<?php echo $this->url(array('module' => 'adminUsuario', 'controller' => 'index', 'action' => 'index'), null, true);?>" class="item-side" id="item-side-logo">
+                        <div class="item-side-notificacion"></div>
+                        <span class="item-side-text"></span>
+                    </a>       
+                    <a href="<?php echo $this->url(array('module' => 'adminUsuario', 'controller' => 'index', 'action' => 'compras'), null, true);?>" class="item-side<?php if ($this->accion == 'compras') echo ' item-side-compras-active';?>" id="item-side-mis-compras">
+                        <div class="item-side-notificacion"></div>
+                        <span class="item-side-text">Mis compras</span>
+                    </a>
+                    <a href="<?php echo $this->url(array('module' => 'adminUsuario', 'controller' => 'index', 'action' => 'puntos'), null, true);?>" class="item-side<?php if ($this->accion == 'puntos') echo ' item-side-risas-active';?>" id="item-side-risas">
+                        <div class="item-side-notificacion item-side-notificacion-active"><span>2</span></div>
+                        <span class="item-side-text">Mis Risas</span>
+                    </a>
+                    <a href="<?php echo $this->url(array('module' => 'adminUsuario', 'controller' => 'index', 'action' => 'programa'), null, true);?>" class="item-side<?php if ($this->accion == 'programa') echo ' item-side-humor-active';?>" id="item-side-humor">
+                        <div class="item-side-notificacion item-side-notificacion-active" style="margin-top:50px;"><span>1</span></div>
+                        <span class="item-side-text">Et Fem l'Humor</span>
+                    </a>
+                    <a href="#" class="item-side" id="item-side-logout">SALIR</a>
+                    <a href="<?php echo $this->url(array('module' => 'adminUsuario', 'controller' => 'index', 'action' => 'configuracion'), null, true);?>" class="item-side<?php if ($this->accion == 'configuracion') echo ' item-side-configuracion-active';?>" id="item-side-configuracion">
+                        <div class="item-side-notificacion"></div>
+                        <span class="item-side-text">Configuración</span>
+                    </a>
+                </div>
+          
+
+            <div id="content">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+        <script>
+            //Initial load of page
+            $(document).ready(sizeContent);
+
+            //Every resize of window
+            $(window).resize(sizeContent);
+
+            //Dynamically assign height
+            function sizeContent() {
+                var body = document.body,
+                html = document.documentElement;
+    
+                var newHeight = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+                $('body').attr('style', 'height: '+newHeight+'px');
+                $('#item-side-configuracion').attr('style', 'margin-top: '+(newHeight-90)+'px');
+            }
+            
+          
+        </script>
+		
+    </body>
+</html>
+
+

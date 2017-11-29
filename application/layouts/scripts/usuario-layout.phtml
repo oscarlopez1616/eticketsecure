@@ -1,0 +1,39 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['frontticketing']['gui'];
+    $ruta_includes = $ruta['server'].$ruta['base'].$ruta['includes'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="icon" href="<?php echo $this->url(array(),null, true);?>favicon.ico" type="image/x-icon" />
+        <title><?php if (isset ($this->metatag)) echo $this->metatag['title']?> - TeatreNeu</title>
+        <meta name="keywords" content="<?php if (isset ($this->metatag)) echo $this->metatag['description']?>" />
+        <meta name="description" content="<?php if (isset ($this->metatag)) echo $this->metatag['keywords']?>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TeatreNeu</title>
+        <meta name="author" content="e-fbk.com">
+        <?php echo  $this->getHelper("Cargador")->cargaScripts($this->cargador_arr); ?>
+        <script src="<?php echo $ruta['dominio'].'/'.$ruta['base'].'/'.$ruta['comunes']['js']; ?>/jquery.placeholder.js"></script>
+        <?php echo  $this->getHelper("Cargador")->cargaStyles($this->cargador_arr); ?>
+        
+    </head>
+<body>
+    <?php include_once($ruta_includes."/analyticstracking.php") ?>
+    <div id="wrapper_top">	
+        <div id="top_menu">
+
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="logo_neu"><a href=""></a></div>
+        <?php echo $this->layout()->content; ?>
+    </div>
+    <div id="black-wrapper"></div>
+    <?php if (isset($this->set_error_message)){?>
+        <script>
+            $('#recuperar-container').fadeIn(500);
+        </script>
+    <?php }?>
+</body>
+</html>

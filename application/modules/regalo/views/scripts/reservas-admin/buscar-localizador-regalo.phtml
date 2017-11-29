@@ -1,0 +1,101 @@
+<?php 
+$ruta = Zend_Registry::get('ruta');
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/es/favicon.ico" type="image/x-icon" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Regala Teatro</title>
+        <script src="<?php echo $ruta['dominio'].$ruta['base'].$ruta['comunes']['js']?>/jquery-1.9.1.min.js"></script>
+        <script src="<?php echo $ruta['dominio'].$ruta['base'].$ruta['comunes']['js']?>/jquery_mobile/jquery.mobile-1.3.2.js"></script>
+        <link rel="stylesheet" type="text/css" media="all" href="<?php echo $ruta['dominio'].$ruta['base'].$ruta['comunes']['js']?>/jquery_mobile/jquery.mobile-1.3.2.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="<?php echo $ruta['dominio'].$ruta['base'].$ruta['comunes']['js']?>/jquery_mobile/jquery.mobile.structure-1.3.2.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="<?php echo $ruta['dominio'].$ruta['base'].$ruta['comunes']['js']?>/jquery_mobile/jquery.mobile.theme-1.3.2.css" />
+        
+<body>
+    <div data-role="page">
+<div data-role="header" data-position="absolute">
+    <h1>Localitzador</h1>
+</div> 
+        <div style="width:200px; margin-left:-100px;left:50%;position:relative;">
+            <?php echo $this->vista_arr["form"] ?>
+        </div>
+
+            <div style="">
+            <?php if ($this->vista_arr["status"]=='error'){ ?>
+                
+                <p class="ui-body-d" style="padding:2em;"><a href="#popupInfo" data-rel="popup" data-role="button" class="ui-icon-alt" data-inline="true" data-transition="pop" data-icon="info" data-theme="e" data-iconpos="notext" aria-expanded="true">Mensaje</a></p>
+                <div data-role="popup" id="popupInfo" class="ui-content ui-popup-active" data-theme="e" style="max-width:250px;">
+                  <p>No s'ha trobat el localitzador a TicketEX.</p>
+                </div>
+                
+            <?php } ?>
+
+            <?php if ($this->vista_arr["status"]=='success'){ ?>
+                <?php if ($this->vista_arr["mode"]=='busqueda'){ ?>    
+                    <?php if ($this->vista_arr["message"]=='localizador_valido_no_reservado'){ ?>    
+                         
+                        <p class="ui-body-d" style="padding:2em;">
+                            <a href="#popupInfo" data-rel="popup" data-role="button" class="ui-icon-alt" data-inline="true" data-transition="pop" data-icon="info" data-theme="e" data-iconpos="notext" aria-expanded="true">Mensaje</a>
+                        </p>
+                        
+                    <div data-role="popup" id="popupInfo" class="ui-content" data-theme="e" style="max-width:250px;">
+                        El Localitzador es vàlid pero encara no s'ha fet cap reserva.
+                    </div>
+                        
+                       <p style="text-align:center;"> <a style="width:100%;" target="_blank" href="<?php echo $this->vista_arr['link_reserva']?>">[ GENERAR RESERVA ]</a></p>
+                       <p style="text-align:center;"> <a style="width:100%;" href="javascript:setRedimida(<?php echo $this->vista_arr["compra"]["info"]["id_compra"]; ?>)">[ REDIMIR ENTRADA ]</a>
+                    <?php }else{?>
+                        <div data-role="collapsible" data-theme="b" data-content-theme="d" data-iconpos="right">
+                            <h4>Dades del Producte</h4>
+                            <b>Nom:</b> <?php echo $this->vista_arr["linea_carrito_compra_regalo"]["info"]["nombre_receptor"]; ?><br />
+                            <b>Producte:</b> <?php echo $this->vista_arr["linea_carrito_compra_regalo"]["info"]["nombre"]; ?><br />
+                            <b>Descripció Producte:</b> <?php echo $this->vista_arr["linea_carrito_compra_regalo"]["info"]["descripcion_servicio"]; ?>. <?php echo $this->vista_arr["linea_carrito_compra_regalo"]["info"]["detalles"]; ?><br />
+                            <b>Num.Entrades:</b>      <?php echo $this->vista_arr["linea_carrito_compra_regalo"]['info']["cantidad"]; ?><br />
+                        </div>
+                        <div data-role="collapsible" data-theme="b" data-content-theme="d" data-iconpos="right">
+                            <h4>Dades de la Reserva</h4>
+                            <b>Espectàcle</b> : <?php echo ($this->vista_arr["reserva"]['titulo_espectaculo']) ?><br />
+                            <b>Sessió :</b> <?php echo ($this->vista_arr["reserva"]['fecha_reserva']) ?><br />
+                            <b>Teatre:</b>      <?php echo $this->vista_arr["reserva"]["nombre_teatro"]; ?><br />
+                            <b>Sala:</b>        <?php echo $this->vista_arr["reserva"]["nombre_sala"]; ?><br />
+                            <b>Redimida:</b>
+                                   <?php if ($this->vista_arr["reserva"]["redimido"]==1){?>
+                                        Ja ha estat redimida
+                                   <?php } ?>
+                                   <?php if ($this->vista_arr["reserva"]["redimido"]==0){?>
+                                        Encara no redimida 
+                                        <a href="javascript:setRedimida(<?php echo $this->vista_arr["compra"]["info"]["id_compra"]; ?>)">[ REDIMIR ENTRADA ]</a>
+                                   <?php } ?>
+
+                        </div>
+                        
+                    <?php } ?>
+                <?php } ?>                    
+            <?php } ?>
+            </div>
+<script>
+
+function setRedimida(id_compra){
+        url = '<?php echo $this->url(array('idioma' => $this->idioma, 'module' => 'regalo', 'controller' => 'reservas-admin', 'action' => 'cambiar-estado-localizador-regalo'),null,true);?>/p1/'+id_compra+'/flag_json/1/';
+        jscontentFunction= $.getJSON(url)
+        .done(function() { 
+            jscontentFunction = $.parseJSON(jscontentFunction.responseText);
+            if (jscontentFunction['status']=='success'){
+                alert ('Se ha redimido la reserva');
+
+            }else if (jscontentFunction['status']=='error'){
+                alert ('No se ha redimido la entrada');
+            }
+        })
+        .fail(function() { alert("error-set-redimida"); })
+        .always(function() { /*alert("complete");*/ });   
+
+    }
+</script>
+
+                    
+                        
+</div>
+</body>

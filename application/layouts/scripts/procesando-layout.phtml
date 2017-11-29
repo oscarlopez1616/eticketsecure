@@ -1,0 +1,51 @@
+<?php 
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['comunes']['gui'];
+    $ruta_includes = $ruta['server'].$ruta['base'].$ruta['includes'];
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="icon" href="<?php echo $this->url(array(),null, true);?>favicon.ico" type="image/x-icon" />
+        <title><?php if (isset ($this->metatag)) echo $this->metatag['title']?> - TeatreNeu</title>
+        <meta name="keywords" content="<?php if (isset ($this->metatag)) echo $this->metatag['description']?>" />
+        <meta name="description" content="<?php if (isset ($this->metatag)) echo $this->metatag['keywords']?>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="e-fbk.com">
+        <title>TeatreNeu</title>
+        <?php echo  $this->getHelper("Cargador")->cargaScripts($this->cargador_arr); ?>
+        <?php echo  $this->getHelper("Cargador")->cargaStyles($this->cargador_arr); ?>
+        
+    </head>
+<body>
+    <?php include_once($ruta_includes."/analyticstracking.php") ?>
+    <?php echo $this->layout()->content; ?>
+    <div id="wrapper_top">	
+        <div id="top_menu">
+
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="logo_neu"><a href="<?php echo $this->url(array('module' => 'frontTeatreneu', 'controller' => 'index', 'action' => 'index'), null, true)?>"></a></div>
+        <div id="pop-procesando">
+            <div id="head-pop-procesando">
+                    <div id="head-pop-procesando-inner">
+                        <div id="head-pop-procesando-inner-left">Club Teatreneu</div>
+                    </div>
+            </div>
+
+            <div id="body-pop-procesando">    
+                <img id="procesando-loader" src="<?php echo $ruta_gui ?>/ajax-loader_2.gif"/>
+                <span><?php echo $this->translate('procesando.conectando.1');?></span>
+            </div>
+            <div id="foot-pop-procesando">    
+                <span>Powered By:</span>
+                <img src="<?php echo $ruta_gui ?>/ticketex_logo_m1.png"/>
+            </div>
+            
+        </div>
+    </div>
+    <div id="black-wrapper"></div>
+    <?php include_once($ruta_includes."/retargeting.php") ?>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?php
+    $ruta = Zend_Registry::get('ruta'); 
+    $ruta_gui = $ruta['dominio'].$ruta['base'].$ruta['regalo']['gui'];
+?>
+        <input name="<?php echo $this->element->getElement('localizador_compra')->getName(); ?>" value="<?php echo $this->element->getElement('localizador_compra')->getValue(); ?>" class="input-clean<?php if ($this->element->getElement('localizador_compra')->hasErrors()){ echo ' input-error'; } ?>"/>
+        <?php echo $this->element->getView()->muestraErrores($this->element->getElement('localizador_compra')->getMessages(), $this->element->getElement('localizador_compra')->getName(), 'regalo');?>
+        <input value="Buscar" type="submit">
+  
+    
